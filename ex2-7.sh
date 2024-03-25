@@ -1,4 +1,5 @@
 #!/bin/sh -x
+# Code for Chapter 2, Exercise 7
 
 ls
 sleep 2
