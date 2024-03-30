@@ -1,0 +1,13 @@
+Exercise 1-1. Explain what happens with
+
+$ date\@
+
+Solution 1-1.
+The shell escapes the '@' because of the preceding backslash '\'. Now
+instead of the '@' being used for its normal meaning, a line kill character
+according to the text, the shell tries to execute a command with the name
+'date@' which likely doesn't exist. The following output is from the test
+machine this exercise was run on.
+$ date\@
+bash: date@: command not found
+

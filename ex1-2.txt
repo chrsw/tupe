@@ -1,0 +1,35 @@
+Exercise 1-2. Most shells (though not the 7th Edition shell) interpret # as
+introducing a comment and ignore all text from the # to the end of the line.
+Given this, explain the following transcript, assuming your erase character
+is also #:
+$ date
+Mon Sep 26 12:39:56 EDT 1983
+$ #date
+Mon Sep 26 12:40:21 EDT 1983
+$ \#date
+$ \\#date
+#date: not found
+$
+
+Solution 1-2.
+The first line in the transcript runs the 'date' command which prints the date
+and time.
+The second line is the 'date' command output.
+The third line starts with deleting the previous character, which is nothing, 
+then what's left on the command line is the 'date' command again.
+The forth line is the 'date' command output again run moments after the previous
+'date' command.
+The fifth line escapes the delete character '#' leaving it to be interpreted
+as-is from the shell, which turns the rest of the line into a comment and
+no output is produced.
+The sixth line escapes the escape which the shell tries to execute as a command
+to run. Starting a command with a backslash tells the shell to not use an alias
+for the command. This is the situation on the system this exercise was tested
+on:
+$ \\#date
+bash: \#date: command not found
+Here there is a difference between the text and the test system. The system
+related to the text probably escapes the '#' character causing the shell to
+try to execute a command with the name '#date' instead of treating '#' as 
+the start of comment character.
+The last line in the transcript is the shell indicating it is ready for a new command.
