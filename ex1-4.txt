@@ -1,0 +1,28 @@
+Exercise 1-4. What are the differences among these commands?
+
+$ ls junk		$ echo junk
+$ ls /			$ echo /
+$ ls			$ echo
+$ ls *			$ echo *
+$ ls '*' 		$ echo '*'
+
+Solution 1-4
+$ ls junk		$ echo junk
+No difference if the file 'junk' exists. If the file 'junk' does not exist
+then ls prints an error message.
+
+$ ls /			echo /
+`ls /` will print every file name in the root directory. `echo \` will print
+the `\` character.
+
+$ ls			$ echo
+`ls` will print the name of non-hidden file in the current directory.
+`echo` will print a blank line.
+
+$ ls *			$ echo *
+No difference
+
+$ ls '*'		$ echo '*'
+No difference if the file '*' exists.
+`ls '*'` will print the name of the file named '*' if it exists.
+`echo '*'` will print the '*' character.

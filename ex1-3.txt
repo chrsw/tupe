@@ -1,0 +1,14 @@
+Exercise 1-3. Try
+$ ls /usr/games
+and do whatever comes naturally. Things might be more fun outside normal
+working hours.
+
+Solution 1-3
+$ ls /usr/games
+$
+The system by default didn't come with any games. Two were installed:
+$ sudo apt install 2048
+$ sudo apt install an
+$ ls /usr/games
+2048  an
+
