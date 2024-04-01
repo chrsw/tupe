@@ -1,0 +1,29 @@
+Exercise 1-6. Explain the output from
+
+$ wc temp >temp
+
+If you misspell a command name, as in
+
+$ woh >temp
+
+what happens?
+
+
+Solution 1-6
+On the test system:
+$ cat temp
+this is a list of words for exercise 1-6. the output of the wc command for a file is redirected to the same file.
+$ wc temp
+  1  24 114 temp
+$ wc temp >temp
+0 0 0 temp
+What's happened is that a new blank file called 'temp' was created to redirect
+the output of 'wc' to. Since this is an empty file that clobbers over the
+existing temp file then 'wc' runs on an empty file and the output goes to that
+same empty file. Maybe a better way to do this is
+$ wc temp >>temp
+
+For the second example, when a command is mistyped, the output goes to stderr
+not stdout by default. Therefore, stdout has nothing to put in the temp
+file so the result is an empty temp file. Meanwhile the error output goes
+to the terminal because that's where stderr goes by default.

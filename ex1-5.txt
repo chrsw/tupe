@@ -1,0 +1,12 @@
+Exercise 1-5. Explain why
+
+$ ls > ls.out
+
+causes ls.out to be included in the list of names.
+
+
+Solution 1-5
+ls.out is included in the list of names because the shell needs to create
+the file output is redirected to before the command is executed. When the
+'ls' command finally runs, ls.out is already on the file system to be
+found but 'ls'.
