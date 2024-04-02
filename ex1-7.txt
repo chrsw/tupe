@@ -1,0 +1,21 @@
+Exercise 1-7. Explain the difference between
+
+	$ who | sort
+
+and
+
+	$ who >sort
+
+Solution 1-7
+$ who | sort
+`who` prints a list of currently logged in users and their login details.
+The output of `who` is piped into the `sort` application. `sort` runs
+with its standard input coming from the pipeline. The pipeline sends
+the output of the `who` command into the input of `sort`. `sort` sorts the
+input and prints the output. In other words, the output is a sorted list of
+logged users and some of the login details.
+
+$ who > sort
+This time the output of who is sent into a file named 'sort'. A new file
+is created if a file named 'sort' does not exist. If the file 'sort' exists
+then it is overwritten with the list of currently logged in users.
