@@ -7,4 +7,6 @@ command
 Solution 2-1
 ctl-d sends EOF to `ed` which closes the 'file', being standard input, the
 keyboard. This is similar to the example command where the EOF is sent to
-`ed` after all bytes in 'file' are sent.
+`ed` after all bytes in 'file' are sent. In the example command, the contents
+of 'file' are treated as commands for `ed`. The commands stop when EOF is
+sent after all 'file' bytes are sent.
