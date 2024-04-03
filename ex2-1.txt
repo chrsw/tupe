@@ -1,0 +1,10 @@
+Exercise 2-1. What happens when you type ctl-d to ed? Compare this to the
+command
+
+	$ ed <file
+
+
+Solution 2-1
+ctl-d sends EOF to `ed` which closes the 'file', being standard input, the
+keyboard. This is similar to the example command where the EOF is sent to
+`ed` after all bytes in 'file' are sent.
