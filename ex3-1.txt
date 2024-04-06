@@ -1,0 +1,13 @@
+Exercise 3-1. What are the differences among the following three commands?
+
+	$ cat file | pr
+	$ pr <file
+	$ pr file
+
+
+Solution 3-1.
+These three commands are basically the same. The first command sends the
+contents of 'file' to `pr` input stream. The second command redirects
+`pr` input stream to come from file instead of standard input. The third
+command passes the 'file' name to pr as a command argument, which `pr` then
+takes as a file to open. In the first two commands 'file' is not opened.
