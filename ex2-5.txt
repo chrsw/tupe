@@ -1,5 +1,5 @@
 Exercise 2-5. Experiment with `chmod`. Try different simple modes like 0 and 1.
-Be careful not to damange your login directory!
+Be careful not to damage your login directory!
 
 
 Solution 2-5
@@ -12,3 +12,13 @@ $ ls -l chmodtest
 $ chmod 400 chmodtest
 $ ls -l chmodtest
 -r-------- 1 chris chris 0 Apr  6 12:14 chmodtest
+
+$ mkdir chmodtestdir
+$ ls -l | grep chmodtestdir
+drwxr-xr-x 2 chris chris 4096 Apr  6 12:10 chmodtestdir
+$ chmod -x chmodtestdir
+$ ls -l | grep chmodtestdir
+drw-r--r-- 2 chris chris 4096 Apr  6 14:06 chmodtestdir
+$ cd chmodtestdir
+bash: cd: chmodtestdir: Permission denied
+
