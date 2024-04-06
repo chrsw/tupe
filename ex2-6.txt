@@ -1,0 +1,24 @@
+Exercise 2-6. Why does `ls -l` report 4 links to recipes? Hint: try
+
+	$ ls -ld /usr/you
+	$ ls -ld /home/chris
+
+Why is this information useful?
+
+
+Solution 2-6
+$ mkdir recipis
+$ cd recipes
+$ pwd
+/home/chris/upe/recipes
+$ mkdir pie cookie
+$ ed pie/apple
+...
+$ ed cookie/choc.chip
+...
+$ cd ..
+$ ls -l | grep recipes
+drwxr-xr-x 4 chris chris 4096 Apr  6 14:30 recipes
+`ls -l` reports 4 links to recipes because there are 4 directories (files)
+"in" the recipes directory: '.', '..', 'pie', 'cookie'. The link count
+can be used to tell how many files are in a directory.
