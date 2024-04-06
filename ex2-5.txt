@@ -1,0 +1,14 @@
+Exercise 2-5. Experiment with `chmod`. Try different simple modes like 0 and 1.
+Be careful not to damange your login directory!
+
+
+Solution 2-5
+`chmod`: 4 for read, 2 for write, 1 for exec permission
+$ ls -l chmodtest
+-rw-r--r-- 1 chris chris 0 Apr  6 12:14 chmodtest
+$ chmod 666 chmodtest
+$ ls -l chmodtest
+-rw-rw-rw- 1 chris chris 0 Apr  6 12:14 chmodtest
+$ chmod 400 chmodtest
+$ ls -l chmodtest
+-r-------- 1 chris chris 0 Apr  6 12:14 chmodtest
