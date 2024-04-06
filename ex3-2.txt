@@ -1,0 +1,14 @@
+Exercise 3-2. Explain the output produced by
+
+	$ ls .*
+
+
+Solution 3-2
+This command lists every file and the contents of every directory whose names
+begin with '.'. The shell expands the asterisk '*' character to match any
+string. So all files that start with a dot '.' and anything else are passed
+to `ls` as arguments. The parent directory an not all of the contents of the
+current directory are printed because the '.' and '..' are special directories
+that don't match in shell expansions. So the list of files passed to `ls` as
+arguments doesn't include '.' or '..'.
+
