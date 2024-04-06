@@ -1,0 +1,6 @@
+Exercise 2-4.`du` was written to monitor disk usage. Using it to find files
+in a directory is at best a strange idiom, and perhaps inappropriate. As
+an alternative, look at the manual page for find(1), and compare the two
+commands. In particular, compare the command du -a| grep ... with the
+corresponding invocation of find. Which runs faster. Is it better to 
+build a new tool or use a side effect of an old one?

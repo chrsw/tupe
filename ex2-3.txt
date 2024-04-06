@@ -1,0 +1,7 @@
+Exercise 2-3. How does the `pwd` command operate?
+
+
+Solution 2-4.
+It depends on the `pwd`. A trivial solution is to print the name of the current directory for the pwd process.
+On the test system, pwd is part of the Coreutils package and includes running 
+lstat() on "." then starts calculating the full path to the current directory from there.
