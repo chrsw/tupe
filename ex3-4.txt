@@ -1,0 +1,13 @@
+Exercise 3-4. How do you tell `grep` to search for a pattern beginning with a
+'-'? Why doesn't quoting the argument help? Hint: investigate the -e option.
+
+
+Solution 3-4
+Using the version of `grep` from one of the test systems (Devuan Linux 5),
+`grep` will find lines with a leading dash '-'.
+
+	$ grep ^- ex3-4_test.txt
+
+It looks like the version of grep described in the text
+is rather old and newer versions of grep, like the one used on the test
+system already includes the -e option referred to by the text by default?

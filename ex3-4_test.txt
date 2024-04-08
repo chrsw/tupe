@@ -1,0 +1,10 @@
+some of the lines
+in this file
+will contain a dash - symbol
+while other lines
+will not
+then some lines will start
+with the dash - symbol
+- like this one
+- and this one
+the rest will not
