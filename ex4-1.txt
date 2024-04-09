@@ -1,0 +1,12 @@
+Exercise 4-1. Look up tagged regular expressions (\( and \)) in Appendix 1 or
+ed(1), and use grep to search for palindromes - words spelled the same
+backwards and forwards. Hint: write a different pattern fo reach length of
+word.
+
+Solution 4-1
+The following is a `grep` command that will find palindromes of 6 or 7
+letters:
+$ grep '^\([a-z]\)\([a-z]\)\([a-z]\)[a-z]\?\3\2\1$' /usr/share/dict/words
+deified
+redder
+
