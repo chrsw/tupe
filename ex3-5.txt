@@ -1,0 +1,12 @@
+Exercise 3-5. Consider
+
+	$ echo */*
+
+Does this produce all names in all directories? In what order do the names
+appear?
+
+
+Solution 3-5
+This command lists all file names in all directories, except for files leading
+with '.'. The order of the files depends on the shell expansion, which on
+the test system is alphabetically ascending.
