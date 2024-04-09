@@ -1,0 +1,7 @@
+Exercise 3-6. (Trick question) How do you get a '/' into a filename. (i.e.
+a '/' that doesn't separate components of the path)?
+
+
+Solution 3-6
+You don't. This is not supported. This conflicts with the directory
+separator character '/'.
