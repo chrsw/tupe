@@ -1,6 +1,6 @@
 Exercise 4-1. Look up tagged regular expressions (\( and \)) in Appendix 1 or
 ed(1), and use grep to search for palindromes - words spelled the same
-backwards and forwards. Hint: write a different pattern fo reach length of
+backwards and forwards. Hint: write a different pattern for each length of
 word.
 
 Solution 4-1
