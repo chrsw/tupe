@@ -1,0 +1,28 @@
+Exercise 5-1. If users prefer your version of cal, how do you make it globally
+accessible? What has to be done to put it in /usr/bin?
+
+
+Solution 5-1
+To make a private version of `cal`, (which is a shell script wrapper around
+/usr/bin/cal) there are several options. One option is to copy the private
+version of cal to /usr/bin/bcal (better cal) with root level permissions:
+
+	$ sudo cp cal /usr/bin/bcal
+
+/usr/bin is already in most users' path so they simply have to run the
+command with:
+
+	$ bcal
+
+Another option is to copy `cal` to a global directory so users can copy it
+to their user directories.
+
+	$ sudo cp cal /etc/defaults/
+
+Another option is to move the original `cal` in /usr/bin and call the new
+`cal` /usr/bin/cal
+
+	$ sudo mv /usr/bin/cal /usr/bin/ocal
+	$ sudo cp cal /usr/bin/
+
+Then edit the cal script to call /usr/bin/ocal instead of /usr/bin/cal
