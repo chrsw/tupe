@@ -6,7 +6,11 @@ word.
 Solution 4-1
 The following is a `grep` command that will find palindromes of 6 or 7
 letters:
-$ grep '^\([a-z]\)\([a-z]\)\([a-z]\)[a-z]\?\3\2\1$' /usr/share/dict/words
+	$ grep '^\([a-z]\)\([a-z]\)\([a-z]\)[a-z]\?\3\2\1$' /usr/share/dict/words
 deified
 redder
+
+4 or 5 letters:
+	$ grep '^\([a-z]\)\([a-z]\)[a-z]\?\2\1$' /usr/share/dict/words | wc -l
+	22
 
