@@ -1,0 +1,9 @@
+Exercise 5-2.  Is it worth fixing `cal` so `cal 83` prints the calendar for
+1983? If so, how would you print the calendar for year 83?
+
+
+Solution 5-2.  See ex5-2.sh.
+The text was published in 1983. This solution was written in 2024. It makes
+just as much sense for '83' to mean '2083' (in 59 years) as 1983 (41 years
+ago). This solution assumes 2-digit years are in the 21st century.
+To print a calendar in the actual year 83, use '083'.
