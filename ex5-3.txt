@@ -19,3 +19,5 @@ of January of NEXT year, since that's what most users would be interested in.
 It would be better to not add too many features to `cal`. Let other tools
 build an appropriate command line for `cal` so it is not burdened with too
 many tasks.
+
+TODO: Provide a solution for the 2nd suggesion with a range of months.
