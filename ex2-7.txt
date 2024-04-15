@@ -1,0 +1,28 @@
+Exercise 2-7. What is the difference between
+
+	$ mv junk junk1
+
+and
+	
+	$ cp junk junk1
+	$ mv junk
+
+Hint: make a link to junk and try it.
+
+Solution 2-7
+One difference between these two commands is moving retains the i-node number
+of the original but copying does not. Like the Hint suggested, this can be
+demonstrated with links:
+
+	$ mkdir temp && cd temp && touch junk && ls -i && ln junk junk2 && ls -i 	&& mv junk junk1 && ls -i
+	5245410 junk
+	5245410 junk  5245410 junk2
+	5245410 junk1  5245410 junk2
+	$ mkdir temp && cd temp && touch junk && ls -i && ln junk junk2 && ls -i        && cp junk junk1 && ls -i && rm junk && ls -i
+	5245405 junk
+	5245405 junk  5245405 junk2
+	5245405 junk  5245410 junk1  5245405 junk2
+	5245410 junk1  5245405 junk2
+
+There's another difference, copying uses more temporary disk space as moving.
+But that's probably not the focus of the Exercise.
