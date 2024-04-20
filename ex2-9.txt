@@ -1,0 +1,18 @@
+Exercise 2-9.  Find out about the other files in /dev by reading Section
+4 of the manual. What is the difference between /dev/mt0 and /dev/rmt0?
+Comment on the potential advantages of having subdirectories in /dev for
+disks, tapes, etc.
+
+Solution 2-9
+The test system doesn't have /dev/mt0 or /dev/rmt0. According to internet
+searches /dev/mt0 is a magnetic tape device and /dev/rmt0 is a remote
+magnetic tape protocol.
+The test system does have a number of other files in /dev:
+disk
+net
+null
+random
+tty
+zero
+Subdirectories in /dev are an advantage because they promote greater
+organization.
