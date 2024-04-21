@@ -1,0 +1,39 @@
+Exercise 3-7. What happens with
+
+	$ cat x y >y
+
+and with
+
+	$ cat x >>x
+
+Thing before rushing off to try them.
+
+
+
+Solution 3-7
+The guess for the first question, is y is replaced by the contents of x
+followed by the contents of y.
+
+	$ cat x
+	a
+	b
+	c
+
+	$ cat y
+	d
+	e
+	f
+
+	$ cat x y > y
+	cat: y: input file is output file
+
+The guess for the second question is that x is doubled.
+
+	$ cat x
+	a
+	b
+	c
+
+	$ cat x >>x
+	cat: x: input file is output file
+
