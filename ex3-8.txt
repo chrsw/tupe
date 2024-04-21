@@ -1,0 +1,11 @@
+Exercise 3-8.  If you type
+
+	$ rm *
+
+why can't `rm` warn you that you're about to delete all your files?
+
+Solution 3-8
+`rm` doesn't warn you because the shell expands * into a list of files
+some of which may match, some wont. So all `rm` sees is a list of files,
+it doesn't know that's all the files in the current directory.
+On the test system this commend does not produce a warning.
