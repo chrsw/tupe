@@ -1,0 +1,12 @@
+Exercise 2-10. Tapes written on non-UNIX systems often have different
+block sizes, such as 800 bytes -- ten 80-character card images -- but the
+tape device /dev/mt0 expects 512-byte blocks. Look up the dd command
+(dd(1)) to see how to reach such a tape.
+
+
+Solution 2-10
+According to the test system dd(1), the option to specify block size is
+'bs':
+
+	bs=BYTES
+		read and write up to BYTES at a time
