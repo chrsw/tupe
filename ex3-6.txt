@@ -1,0 +1,11 @@
+Exercise 3-6. (Trick question). How do you get a '/' into a filename
+(i.e. a '/' that doesn't separate components of the path)?
+
+Solution 3-6.
+This is ill-advised because things which process path names may break.
+On the test system, this is not allowed:
+
+	$ touch test
+	$ touch 'te\/st'
+
+
