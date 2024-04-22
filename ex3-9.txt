@@ -1,0 +1,13 @@
+Exercise 3-9.  Look in /bin and /usr/bin to see how many commands are
+actually shell files. Can you do it in one command? Hint: file(1). How
+accurate are guesses based on length?
+
+
+Solution 3-9
+Counting the shell scripts in /bin and /usr/bin with one command
+
+	$ file /bin/* /usr/bin/* | grep -i shell | wc -l
+	181
+
+Using file sizes is reasonably accurate for bin (22 files 8k or less)
+but less accurate for /usr/bin (222 files 8k or less).
