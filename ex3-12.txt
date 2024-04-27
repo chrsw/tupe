@@ -1,0 +1,21 @@
+Exercise 3-12.
+
+	$ grep -l pattern filenames
+
+lists the filenames in which there was a match of pattern, but produces no
+other output. Try some variations on
+
+	$ command `grep -l pattern filenames`
+
+
+Solution 3-12
+This pattern finds files that contain a match to pattern and passes them as
+arguments to `command`. For example:
+
+	$ file `grep -i -l bash *`
+	ex1-1.txt:  ASCII text
+	ex1-2.txt:  ASCII text
+	ex1-3.sh:   Bourne-Again shell script, ASCII text executable
+
+Runs `file`, which prints the type of file passed as an argument, on each
+file that contains a match of the string `bash`. 
