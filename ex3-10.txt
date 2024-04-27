@@ -1,0 +1,15 @@
+Exercise 3-10.  If the backslashes are omitted in
+
+	$ echo `echo \`date\``
+
+what happens?
+
+Solution 3-10
+The word "date" is printed
+
+	$ echo `echo `date``
+	date
+
+Instead of `date` executing, the word "date" is passed as an argument to the
+inner `echo`, which prints "date". The string "date" is passed to the outer
+`echo` which also prints "date.
