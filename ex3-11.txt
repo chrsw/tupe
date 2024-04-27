@@ -1,0 +1,17 @@
+Exercise 3-11.  Try
+
+	$ `date`
+
+and explain the result.
+
+
+Solution 3-11
+
+	$ `date`
+	bash: Sat: command not found
+
+The `date` command is executed and the output is passed to the shell for
+the shell to execute. The output of the `date` command happens to be
+"Sat Apr 27 04:15:00 PM EDT 2024" so the shell attempts to execute a command
+called `Sat` with the rest of the input as arguments to the command.
+Naturally no such command `Sat` exists so the shell reports an error.
