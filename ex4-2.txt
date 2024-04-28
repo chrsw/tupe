@@ -1,0 +1,11 @@
+Exercise 4-2.  The structure of `grep` is to read a single line, check for a
+match, then loop. How would `grep` be affected if regular expressions could
+match newlines?
+
+
+Solution 4-2
+The matching engine in `grep` would have to be completely rewritten to support
+new lines. Looking for patterns that cross line boundaries would also likely
+have an impact on performance too. The test system has an option to match
+with newlines in the regex using the -P (for Perl regex) option. A different
+regex library is linked to the `grep` tool in order to use this option.
