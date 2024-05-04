@@ -1,0 +1,17 @@
+Exercise 3-13.  Why do we always include the current directory in PATH? Where
+should it be placed?
+
+
+Solution 3-13
+The PATH variable stores a list of directories where shell looks for commands
+that it is told to execute. The shell starts with the first directory in
+the PATH and if the executable file that matches the name of the command is
+found in that directory then the search stops and the file is executed. If
+there is no file that matches the name of the command given to the shell
+then the shell looks for the executable file in the next directory and
+so on.
+It is convenient to put the current directory, `.` in the PATH variable, as
+the text suggests, but in modern practice this is not commonly done for
+security reasons. Malicious software can trick a user into executing a
+binary dropped into the current directory. On the test system, the current
+directory is not included in the PATH by default. 
