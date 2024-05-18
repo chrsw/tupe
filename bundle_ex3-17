@@ -1,0 +1,29 @@
+#!/bin/sh
+# Exercise 3-17.  How would you use `bundle` to send all the files in a
+# directory and its subdirectories? Hint: shell files can be recursive.
+
+
+# Solution 3-17
+# Recursively descend into directories to build a distribution package
+# To run:
+# 	$ sh bundle_ex3-17 * > out_ex3-17
+
+echo '# To unbundle, sh this file'
+
+for i in $*
+do
+	if test -d $i
+	then
+		#echo "dir $i"
+		echo "mkdir -p $i"
+		sh bundle_ex3-17 $i/*
+	fi
+	if test -f $i
+	then
+		echo "echo $i 1>&2"
+		echo "cat >$i <<'End of $i'"
+		cat $i
+		echo "End of $i"
+		#echo "file $i"
+	fi	
+done
