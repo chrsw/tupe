@@ -7,6 +7,11 @@
 # Recursively descend into directories to build a distribution package
 # To run:
 # 	$ sh bundle_ex3-17 * > out_ex3-17
+#
+# TODO:
+# Remove need for "*" argument
+# Add explanatory comments
+# Only print unbundle instructions once
 
 echo '# To unbundle, sh this file'
 
@@ -14,16 +19,16 @@ for i in $*
 do
 	if test -d $i
 	then
-		#echo "dir $i"
+		# found a directory, add to output script
 		echo "mkdir -p $i"
 		sh bundle_ex3-17 $i/*
 	fi
 	if test -f $i
 	then
+		# found a file, bundle it
 		echo "echo $i 1>&2"
 		echo "cat >$i <<'End of $i'"
 		cat $i
 		echo "End of $i"
-		#echo "file $i"
 	fi	
 done
