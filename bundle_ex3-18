@@ -1,0 +1,19 @@
+# Exercise 3-18.  Modify `bundle` so it includes with each file the information 
+# garnered from `ls -l`, particularly permissions and date of last change. 
+# Contrast the facilities of `bundle` with the archive program ar(1).
+
+
+# Solution 3-18
+# bundle_3-18:  group files into distribution package, with listing details
+
+echo '# To unbundle, sh this file'
+for i
+do
+	info=`ls -l $i`
+	echo "echo '$info'"
+	#cat "echo $i 1>&2"
+	echo "cat >$i <<'End of $i'"
+	echo "ls -l $i"
+	cat $i
+	echo "End of $i"
+done
