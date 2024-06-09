@@ -1,0 +1,7 @@
+Exercise 5-4.  Why doesn't `which` reset PATH to opath before exiting?
+
+
+Solution 5-4
+A reset of PATH to opath is not necessary because PATH was only modified for
+the script environment. When the script returns to the shell the PATH used
+by the shell before the shell script ran is unchanged.
