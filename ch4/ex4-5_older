@@ -1,0 +1,8 @@
+#!/bin/sh
+# Exercise 4-5  Modify older and newer so they don't include the argument file
+# in their output. Change them so the files are listed in the opposite order.
+
+# Solution 4-5
+# 1st part of solution
+# older f: list files older than f, exclude f from output, reverse order
+ls -tr | sed '/^'$1'$/q' | grep -v ^$1$ | tac
