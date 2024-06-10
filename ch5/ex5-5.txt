@@ -1,0 +1,11 @@
+Exercise 5-5.  Since the shell uses `esac` to terminate a `case` and `fi` to
+terminate an `if`, why does it use `done` to terminate a `do`?
+
+Solution 5-5
+Maybe the shell uses `done` to terminate a `do` because `od` is already a
+command:
+
+	$ which od
+	/usr/bin/od
+	$ whatis od
+	od (1)               - dump files in octal and other formats
