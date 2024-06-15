@@ -1,0 +1,15 @@
+Exercise 2-11.  Why isn't /dev/tty just a link to your login terminal? What
+would happen if it were mode rw--w--w- like your login terminal?
+
+
+Solution 2-11
+If /dev/tty were a link to a user's login terminal then only one user can
+use the /dev/tty facility at a time.
+/dev/tty details:
+$ ls -l /dev/tty
+crw-rw-rw- 1 root tty 5, 0 Jun 14 22:32 /dev/tty
+login terminal details:
+$ ls -l `tty`
+crw--w--w- 1 chris tty 136, 0 Jun 14 22:34 /dev/pts/0
+If /dev/tty were rw--w--w- then programs like `crypt` wouldn't be able to
+read from the user's terminal.
