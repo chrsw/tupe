@@ -1,0 +1,10 @@
+Exercise 2-12.  How does write(1) work? Hint: see utmp(5).
+
+Solution 2-12
+
+	$ whatis write
+	write (1)            - send a message to another user
+
+write(1) uses utmp records to find terminal devices for each logged in user
+then uses system level privileges to send a message to each device, which are 
+-rw--w--w- by default.
