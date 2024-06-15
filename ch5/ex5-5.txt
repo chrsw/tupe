@@ -9,3 +9,5 @@ command:
 	/usr/bin/od
 	$ whatis od
 	od (1)               - dump files in octal and other formats
+
+`od` is discussed in Section 2.5.
