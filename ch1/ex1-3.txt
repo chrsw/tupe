@@ -1,5 +1,7 @@
-Exercise 1-3. Try
-$ ls /usr/games
+Exercise 1-3.  Try
+
+	$ ls /usr/games
+
 and do whatever comes naturally. Things might be more fun outside normal
 working hours.
 
