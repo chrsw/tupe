@@ -1,0 +1,9 @@
+Exercise 4-3.  Use the tools in this section to write a simple spell checker.
+What are its shortcomings, and how would you address them?
+
+
+Solution 4-3
+Idea:
+Try taking each word set in via standard input and search for that word in
+the test system's dictionary file: /usr/share/dict/words.
+If there is no match, print the word to standard output.
