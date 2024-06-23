@@ -1,5 +1,5 @@
 # About this directory 
-Solutions for _The UNIX Programming Environment_ (K&R2) Kernighan & Pike, 1984, Prentice Hall, Chapter 1
+Solutions for _The UNIX Programming Environment_ Kernighan & Pike, 1984, Prentice Hall, Chapter 1
 
 The following table is a list of exercises and solutions.
 
