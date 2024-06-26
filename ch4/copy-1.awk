@@ -3,5 +3,5 @@
 # as cat does? Which is the shortest?
 # Part of Exercise 4-7
 # To run:
-# awk -f copy.awk < input_file
+# awk -f copy-1.awk < input_file
 { print $0 }
