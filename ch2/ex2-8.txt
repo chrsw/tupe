@@ -1,0 +1,32 @@
+Exercise 2-8.  `cp` doesn't copy subdirectories, it just copies files at the
+first level of a hierarchy. What does it do if one of the argument files is a
+ directory? Is this kind or even sensible? Discus the relative merits of the
+possibilities: an option to `cp` to descent directories, a separate command 
+`rcp` (recursive copy) to do the job, or just having cp copy a directory
+recursively when it finds one. See Chapter 7 for help on providing this
+facility. What other programs would profit from the ability to traverse the
+directory tree?
+
+
+Solution 2-8
+On the test system, `cp` does not copy recursively by default:
+
+	$ cp test2 test1/
+	cp: -r not specified; omitting directory 'test2'
+
+The option -r can be used to copy directories:
+
+	$ cp -r test2 test1/
+	$ ls test1/
+	test2
+
+A separate command, such as `rcp`, would work for this task. Although it's
+another command to remember and these days there is already a popular utility
+called `rcp` (remote copy between hosts).
+Added an option to `cp` for recursive copy support is probably the best option
+and probably the most commonly used method at the time this exercise solution
+was written (summer 2024). It doesn't break the Unix Philosophy (do one thing
+only, do it well) because it operation is still the same.
+Having `cp` quietly perform the recursive copy is probably a bad idea because
+the operation could be a mistake or it may be unclear to the user exactly
+what is supposed to happen.
