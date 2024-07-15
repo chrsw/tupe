@@ -1,0 +1,39 @@
+Exercise 2-13.  How can you tell if a user has been active at the terminal
+recently?
+
+
+Solution 2-13
+To tell if a user has be active the terminal recently on a modern system, use
+ the `last` command.
+
+	$ last | head -n 2
+	chris    :0.0         :0.0             Sat Jul 13 15:09    gone - no logout
+	reboot   system boot  6.1.0-10-amd64   Sat Jul 13 15:09   still running
+
+The text does not mention this command, it was probably implemented after the
+text was published. Based on the material presented in the text, another
+solution could be the `who` command as a root:
+
+	$ sudo who
+	chris    pts/3        2024-07-14 20:51
+
+Perhaps another option, more aligned with the spirit of the text is to find
+out what terminal a user is connected to and list the details of that
+terminal device to see when it was last modified:
+	
+	$ tty
+	/dev/pts/1
+	$ date && ls -l /dev/pts/1
+	Sun Jul 14 09:04:22 PM EDT 2024
+	crw------- 1 chris tty 136, 1 Jul 14 21:04 /dev/pts/1
+
+Or perhaps yet another way is to use `grep` to filter the list of terminal
+devices for the user you're interested in:
+
+	$ ls -l /dev/pts | grep chris
+	crw------- 1 chris tty  136, 0 Jul 14 21:05 0
+	crw------- 1 chris tty  136, 1 Jul 14 21:05 1
+	crw------- 1 chris tty  136, 2 Jul 14 14:23 2
+
+The most recently modified terminal device file is the last activity for the
+user.	
