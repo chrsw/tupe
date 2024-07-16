@@ -8,7 +8,7 @@ verify your understanding.
 	grep '\'$'		grep "$"
 
 A file containing this commands themselves makes a good test case if you
-want to experiemnt.
+want to experiment.
 
 
 Solution 3-3
