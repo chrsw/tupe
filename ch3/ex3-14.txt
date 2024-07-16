@@ -1,0 +1,11 @@
+Exercise 3-14.  Compare the here-document version of 411 with the original.
+Which is easier to maintain? Which is a better basis for general service?
+
+
+Solution 3-14
+The original version of 411 is `411`. The here-document version of 411 is
+`411_sec3-7`. The here-document version might be easier to maintain because
+it is all contained in one file but the original might be easier to deploy
+since it allows users to write their own scripts for searching the on-
+line phone book. The latter is how most databases are implemented on Unix
+systems.
