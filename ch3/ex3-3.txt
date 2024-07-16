@@ -1,0 +1,142 @@
+Exercise 3-3.  Predict what each of the following grep commands will do, then
+verify your understanding.
+
+	grep \$			grep \\
+	grep \\$		grep \\\\
+	grep \\\$		grep "\$"
+	grep '\$'		grep '"$'
+	grep '\'$'		grep "$"
+
+A file containing this commands themselves makes a good test case if you
+want to experiemnt.
+
+
+Solution 3-3
+Guesses
+grep \$
+match a literal dollar sign
+
+grep \\
+match a literal backslash
+
+grep \\$
+match a literal backslash at the end of a line
+
+grep \\\\
+match two backslashes in a row
+
+grep \\\$
+match a literal backslash then a literal dollar sign
+
+grep "\$"
+match a literal dollar sign
+
+grep '\$'
+match a literal backslash followed by dollar sign
+
+grep '"$'
+match a literal double-quote followed by a literal dollar sign
+
+grep '\'$'
+match a literal backslash, single-quote and dollar sign 
+
+Verification
+$ cat grep_ex3-3.txt 
+grep \$		
+grep \\
+grep \\$
+grep \\\\
+grep \\\$	
+grep "\$"
+grep '\$'	
+grep '"$'
+grep '\'$'	
+grep "$"
+
+$ grep \$ grep_ex3-3.txt 
+grep \$		
+grep \\
+grep \\$
+grep \\\\
+grep \\\$	
+grep "\$"
+grep '\$'	
+grep '"$'
+grep '\'$'	
+grep "$"
+
+$ grep \\ grep_ex3-3.txt 
+grep: Trailing backslash
+
+$ grep \\$ grep_ex3-3.txt 
+grep \$		
+grep \\$
+grep \\\$	
+grep "\$"
+grep '\$'	
+grep '"$'
+grep '\'$'	
+grep "$"
+
+$ grep \\\\ grep_ex3-3.txt
+grep \$		
+grep \\
+grep \\$
+grep \\\\
+grep \\\$	
+grep "\$"
+grep '\$'	
+grep '\'$'
+
+$ grep \\\$ grep_ex3-3.txt 
+grep \$		
+grep \\$
+grep \\\$	
+grep "\$"
+grep '\$'	
+grep '"$'
+grep '\'$'	
+grep "$"
+
+$ grep "\$" grep_ex3-3.txt
+grep \$		
+grep \\
+grep \\$
+grep \\\\
+grep \\\$	
+grep "\$"
+grep '\$'	
+grep '"$'
+grep '\'$'	
+grep "$"
+
+$ grep '\$' grep_ex3-3.txt
+grep \$		
+grep \\$
+grep \\\$	
+grep "\$"
+grep '\$'	
+grep '"$'
+grep '\'$'	
+grep "$"
+
+$ grep '"$' grep_ex3-3.txt
+grep "\$"
+grep "$"
+
+$ grep '\'$' grep_ex3-3.txt 
+>
+
+$ grep "$" grep_ex3-3.txt
+grep \$		
+grep \\
+grep \\$
+grep \\\\
+grep \\\$	
+grep "\$"
+grep '\$'	
+grep '"$'
+grep '\'$'	
+grep "$"
+
+Mostly incorrect.
