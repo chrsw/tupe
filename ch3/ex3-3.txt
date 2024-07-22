@@ -140,3 +140,5 @@ grep '\'$'
 grep "$"
 
 Mostly incorrect.
+It seems the shell is interpreting some of these characters before they get to 
+`grep`.
