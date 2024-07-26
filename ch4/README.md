@@ -6,7 +6,7 @@ The following table is a list of exercises and solutions.
 |--------|--------|--------|
 |4-1     |ex4-1.txt        |        |
 |4-2     | ex4-2.txt               |        |
-|4-3     |ex4-3.txt                |        |
+|4-3     |ex4-3.txt, check               |        |
 |4-4     |                |        |
 |4-5     |ex4-5_newer, ex4-5_older        |        |
 |4-6     |        |        |
