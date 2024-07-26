@@ -1,0 +1,11 @@
+#!/bin/sh
+# Solution for Exercise 4-3
+# Run with ./check <input file of words>
+
+for i in `cat $1 | tr -sc A-Za-z '\012'`;
+do
+	grep -iwq $i /usr/share/dict/words || echo $i;
+done
+
+
+
