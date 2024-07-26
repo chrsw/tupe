@@ -4,7 +4,6 @@ The following table is a list of exercises and solutions.
 
 |Exercise|Solution|Comments|
 |--------|--------|--------|
-
 |3-1  	     |ex3-1.txt        |        |
 |3-2  	     |ex3-2.txt        |        |
 |3-3  	     |ex3-3.txt        |        |
