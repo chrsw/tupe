@@ -33,7 +33,8 @@ int main(int argc, char *argv[])
 
 void error(char *s1, char *s2)
 {
-    extern int errno, sys_nerr;
+    extern int __thread errno;
+    extern int sys_nerr;
     extern const char *const sys_errlist[];
     extern char *progname;
 
