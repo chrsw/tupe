@@ -1,3 +1,12 @@
+/*
+ * Description:
+ *      Structurally, `readslow` is identical to `cat` except that it loops
+ *      instead of quitting when it encounters the current end of input. It
+ *      has to use low-level I/O because the standard library routines
+ *      continue to report EOF after the first end of file.
+ * 
+ */
+
 /* readslow:  keep reading, waiting for more */
 
 #include <unistd.h>
