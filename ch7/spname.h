@@ -1,6 +1,6 @@
 #ifndef SPNAME_H
 #define SPNAME_H
 
-int spdist(char *s, char *t);
+int spname(char *oldname, char *newname);
 
 #endif	/* SPNAME_H */
