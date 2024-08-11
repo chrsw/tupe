@@ -12,7 +12,7 @@
 #include "spname.h"
 #include "mindist.h"
 
-spname(char *oldname, char *newname)
+int spname(char *oldname, char *newname)
 {
     char *p, guess[DIRSIZ+1], best[DIRSIZ+1];
     char *new = newname, *old = oldname;
