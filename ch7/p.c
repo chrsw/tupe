@@ -1,4 +1,9 @@
 /*p:  print input in chunks (version 4) */
+ 
+/* Build
+ *  $ gcc -o p p.c spname.c spdist.c print.c mindist.c efopen.c ttyin.c
+ *  
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,8 +13,7 @@
 #include "ttyin.h"
 
 #define PAGESIZE    22
-char *progname;     /* program name for error message */
-
+char *progname;     		/* program name for error message */
 
 int main(int argc, char *argv[])
 {
