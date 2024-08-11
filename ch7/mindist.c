@@ -1,3 +1,6 @@
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include <sys/types.h>
 #include <sys/dir.h>
 #include "spdist.h"
@@ -9,7 +12,8 @@ int mindist(char *dir, char *guess, char *best)
 	int d, nd, fd;
 	struct {
 		ino_t ino;
-		char name[DIRSIZ+1];		/* 1 more than in dir.h */
+		char name[sizeof(struct dirent)+1]; /* 1 more than in dir.h */
+		//char name[DIRSIZ+1];
 	} nbuf;
 
 	nbuf.name[DIRSIZ] = '\0';		/* +1 for terminal '\0' */

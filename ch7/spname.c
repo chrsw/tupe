@@ -1,12 +1,11 @@
-/* spname:  return correctly spelled filename */
-/*
- * spname(oldname, newname) char *oldname, *newname;
+/* spname:  return correctly spelled filename 
  * returns  -1 if no reasonable match to oldname,
  *           0 if exact match,
  *           1 if correctec.
  * stores corrected name in newname.
  */
 
+#include <string.h>
 #include <sys/types.h>
 #include <sys/dir.h>
 #include "spname.h"
@@ -25,7 +24,7 @@ int spname(char *oldname, char *newname)
             return strcmp(oldname, newname) != 0;
         p = guess;                      /* copy next component */
                                         /* into guess */
-        for (; old != '/' && old != '\0'; *old++)
+        for (; *old != '/' && *old != '\0'; *old++)
             if (p < guess+DIRSIZ)
                 *p++ = *old;
         *p = '\0';

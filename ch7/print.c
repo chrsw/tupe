@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include "ttyin.h"
 
 /* print:  print fp in pagesize chunks */
 void print(FILE *fp, int pagesize)
