@@ -1,7 +1,8 @@
 /*p:  print input in chunks (version 4) */
  
 /* Build
- *  $ gcc -o p p.c spname.c spdist.c print.c mindist.c efopen.c ttyin.c
+ *  $ gcc -Wall -Wextra -Wpedantic -o p p.c spname.c spdist.c
+ *     print.c mindist.c efopen.c ttyin.c
  *  
  */
 

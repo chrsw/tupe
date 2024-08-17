@@ -24,13 +24,16 @@ int spname(char *oldname, char *newname)
             return strcmp(oldname, newname) != 0;
         p = guess;                      /* copy next component */
                                         /* into guess */
-        for (; *old != '/' && *old != '\0'; *old++)
+        for (; *old != '/' && *old != '\0'; old++)
             if (p < guess+DIRSIZ)
                 *p++ = *old;
         *p = '\0';
         if (mindist(newname, guess, best) >= 3)
             return -1;  /* hopeless */
-        for (p = best; *new = *p++;)                /* add to end */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wparentheses"
+        for (p = best; (*new = *p++);)                /* add to end */
             new++;                                  /* of newname */
+#pragma GCC diagnostic pop
     }
 }

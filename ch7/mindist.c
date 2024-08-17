@@ -19,6 +19,7 @@ int mindist(char *dir, char *guess, char *best)
 	nbuf.name[DIRSIZ] = '\0';		/* +1 for terminal '\0' */
 	if (dir[0] == '\0')				/* current dirctory */
 		dir = ".";
+    d = 3;      /* minimum distance */
 	if ((fd=open(dir,0)) == -1)
 		return d;
 	while (read(fd,(char *)&nbuf,sizeof(struct dirent)) > 0)
