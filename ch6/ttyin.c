@@ -1,8 +1,7 @@
 /* ttyin:  process response from /dev/tty (version 1) */
 
 #include <stdio.h>
-
-FILE * efopen(const char *, const char *);
+#include "efopen.h"
 
 #define BUFSIZE 100
 
