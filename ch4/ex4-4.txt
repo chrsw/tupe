@@ -1,0 +1,5 @@
+Exercise 4-4.  Write a word counting program in your favorite programming
+language and compare its size, speed and maintainabil;ity with the word-
+counting pipeline. How easily can you convert it into a spelling checker?
+
+Solution 4-4.  See wc.c, 
