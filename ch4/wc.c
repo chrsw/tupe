@@ -10,37 +10,65 @@
 
 #define MAXWORD 100
 
-static char buf[BUFSIZ];
-static int bufp = 0;
-
 /* data types */
 struct tnode {                  /* the tree node */
     char *word;                 /* points to the text */
-    int count;                  /* number of occurances */
+    int count;                  /* number of occurrances */
+    int rank;
     struct tnode *left;         /* left child */
     struct tnode *right;        /* right child */
 };
+
+struct tnode zero = {"none", 0, 0, NULL, NULL};
+
+static char buf[BUFSIZ];
+static int bufp = 0;
+int top[10] = {0};              /* ten highest counts */
+int rcount = 0;                     /* iterate over tree */
+struct tnode *topcounts[10];
+
 
 /* functions */
 int getch(void);
 void ungetch(int);
 struct tnode *addtree(struct tnode *, char *);
+struct tnode *addrank(struct tnode *, struct tnode *);
 void treeprint(struct tnode *);
+void ranktree(struct tnode *);
 int getword(char *, int);
 struct tnode *talloc(void);
-
+int istop(struct tnode *);
+void rankprint(struct tnode *p);
+void inittopcounts(void);
+void printtopten(void);
 
 /* word frequency count */
 int main(int argc, char *argv[])
 {
-    struct tnode *root;
+    struct tnode *root;                 /* for sorting alphabetically */
+    struct tnode *rank;                 /* for sorting by count */
     char word[MAXWORD];
+    int wc = 0;
 
     root = NULL;
+    rank = NULL;
+
+    inittopcounts();
     while (getword(word, MAXWORD) != EOF)
-        if (isalpha(word[0]))
+        if (isalpha(word[0])) {
             root = addtree(root, word);
-    treeprint(root);
+            wc++;
+        }
+    //treeprint(root);
+    rankprint(root);
+    printf("words = %d\n", wc);
+    printtopten();
+    //ranktree(rank);
+    //rankprint(root);
+    rank = malloc((sizeof(struct tnode *))*wc);
+    if (rank == NULL)
+        return -1;
+
     return 0;
 }
 
@@ -89,6 +117,21 @@ struct tnode *addtree(struct tnode *p, char *w)
 }
 
 
+/* addrank:  add a node with w, at or below p, count sort */
+struct tnode *addrank(struct tnode *r, struct tnode *p)
+{
+    if (r == NULL) {                /* new sort */
+        r = talloc();               /* make a new node */
+        r->left = r->right = NULL;
+
+    } else if (r->count > p->count)
+        p->left = addrank(r, p);
+    else                            /* less than into right subtree */
+        p->right = addrank(r, p);
+    return p;
+}
+
+
 /* treeprint:  in-order print of tree p */
 void treeprint(struct tnode *p)
 {
@@ -96,6 +139,35 @@ void treeprint(struct tnode *p)
         treeprint(p->left);
         printf("%4d %s\n", p->count, p->word);
         treeprint(p->right);
+    }
+}
+
+
+/* rankprint:  print tree and look at node counts */
+void rankprint(struct tnode *p)
+{
+    if (p != NULL) {
+        //printf("%4d %s\n", p->count, p->word);
+        rankprint(p->left);
+        printf("%4d %s", p->count, p->word);
+        if (istop(p)) {
+            printf("  --  top 10!\n");
+        } else {
+            printf("\n");
+        }
+        rankprint(p->right);
+    }
+}
+
+
+/* ranktree:  build a tree based off count number */
+void ranktree(struct tnode *p)
+{
+    if (p != NULL) {
+        ranktree(p->left);
+        //printf("%4d %s\n", p->count, p->word);
+        addrank(p, p);
+        ranktree(p->right);
     }
 }
 
@@ -121,4 +193,37 @@ void ungetch(int c) {
         printf("ungetch: too many characters\n");
     else
         buf[bufp++] = c;
+}
+
+
+/* istop:  is this count in the top 10? */
+int istop(struct tnode *p)
+{
+    int i;
+    int j;
+
+    if (!p) return 0;
+    for (i = 0; i < 10; i++)
+        if (p->count > topcounts[i]->count) {
+            for (j = 9; j >= i; j--)
+                topcounts[j] = topcounts[j-1];
+            topcounts[i] = p;
+            return p->count;
+        }
+        return 0;
+}
+
+
+void inittopcounts(void)
+{
+    int i = 0;
+    for (i = 0; i < 10; i++)
+        topcounts[i] = &zero;
+}
+
+void printtopten(void)
+{
+    int i;
+    for (int i = 0; i < 10; i++)
+        printf("%4d %s\n", topcounts[i]->count, topcounts[i]->word);
 }
