@@ -141,7 +141,7 @@ void ungetch(int c) {
 }
 
 
-/* inserttop:  is this count in the top 10? */
+/* inserttop:  put a node in the correct place in top 10 list */
 void inserttop(struct tnode *p)
 {
     int i;
@@ -149,10 +149,10 @@ void inserttop(struct tnode *p)
 
     if (!p) return;
     for (i = 0; i < 10; i++)
-        if (p->count > topcounts[i]->count) {
-            for (j = 9; j >= i; j--)
-                topcounts[j] = topcounts[j-1];
-            topcounts[i] = p;
+        if (p->count > topcounts[i]->count) {       /* a top 10 is found */
+            for (j = 9; j >= i; j--)                /* put in correct place */
+                topcounts[j] = topcounts[j-1];      /* and shift everything */
+            topcounts[i] = p;                       /* else down */
             return;
         }
     return;
