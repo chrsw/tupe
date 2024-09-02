@@ -1,4 +1,7 @@
-/* wc:  simple word counting for Exercise 4-4 
+/* top10:  Print the most frequently occurring words.
+ *
+ * Simple word counting implementation in C for Exercise 4-4 
+ * See ex4-4.txt.
  *
  * Print the 10 most frequently appearing words from the input stream.
  * The words are printed in increasing order along with their counts.
@@ -18,16 +21,14 @@
 struct tnode {                  /* the tree node */
     char *word;                 /* points to the text */
     int count;                  /* number of occurrences */
-    int rank;
     struct tnode *left;         /* left child */
     struct tnode *right;        /* right child */
 };
 
-struct tnode zero = {"none", 0, 0, NULL, NULL};
-
+struct tnode zero = {"", 0, NULL, NULL};
 static char buf[BUFSIZ];
 static int bufp = 0;
-struct tnode *topcounts[10];
+struct tnode *topwords[10];
 
 
 /* functions */
@@ -37,9 +38,10 @@ struct tnode *addtree(struct tnode *, char *);
 int getword(char *, int);
 struct tnode *talloc(void);
 void inserttop(struct tnode *);
-void ranktree(struct tnode *p);
+void ranktree(struct tnode *);
 void inittop(void);
 void printtop(void);
+
 
 /* word frequency count */
 int main(int argc, char *argv[])
@@ -47,7 +49,6 @@ int main(int argc, char *argv[])
     struct tnode *root;                 /* for sorting alphabetically */
     struct tnode *rank;                 /* for sorting by count */
     char word[MAXWORD];
-    int wc = 0;
 
     root = NULL;
     rank = NULL;
@@ -56,13 +57,12 @@ int main(int argc, char *argv[])
     while (getword(word, MAXWORD) != EOF)
         if (isalpha(word[0])) {
             root = addtree(root, word);
-            wc++;
         }
     ranktree(root);                     /* Ranking the top 10 most */
                                         /* seen words on input */
     printtop();                         /* print top 10 most seen words */
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 
@@ -102,9 +102,9 @@ struct tnode *addtree(struct tnode *p, char *w)
         p->left = p->right = NULL;
     } else if ((cond = strcmp(w, p->word)) == 0)
         p->count++;                 /* repeated word */
-    else if (cond < 0)              /* less than into left subtree */
+    else if (cond < 0)              /* less than into left sub-tree */
         p->left = addtree(p->left, w);
-    else                            /* greater than into right subtree */
+    else                            /* greater than into right sub-tree */
         p->right = addtree(p->right, w);
     return p;
 }
@@ -121,7 +121,7 @@ void ranktree(struct tnode *p)
 }
 
 
-/* talloc: make a tnode */
+/* talloc:  make a tnode */
 struct tnode *talloc(void)
 {
     return (struct tnode *) malloc(sizeof(struct tnode));
@@ -151,30 +151,27 @@ void inserttop(struct tnode *p)
     int i;
     int j;
 
-    if (!p) return;
     for (i = 0; i < 10; i++)
-        if (p->count > topcounts[i]->count) {       /* a top 10 is found */
+        if (p->count > topwords[i]->count) {       /* a top 10 is found */
             for (j = 9; j >= i; j--)                /* put in correct place */
-                topcounts[j] = topcounts[j-1];      /* and shift everything */
-            topcounts[i] = p;                       /* else down */
+                topwords[j] = topwords[j-1];      /* and shift everything */
+            topwords[i] = p;                       /* else down */
             return;
         }
-    return;
 }
+
 
 /* inittop:  initialize (clear) memory for points to top 10 word counts */
 void inittop(void)
 {
-    int i = 0;
-    for (i = 0; i < 10; i++)
-        topcounts[i] = &zero;
+    for (int i = 0; i < 10; i++)
+        topwords[i] = &zero;
 }
 
 
 /* printtop:  print the top 10 most frequently found words to standard output */
 void printtop(void)
 {
-    int i;
     for (int i = 0; i < 10; i++)
-        printf("%4d %s\n", topcounts[i]->count, topcounts[i]->word);
+        printf("%4d %s\n", topwords[i]->count, topwords[i]->word);
 }
