@@ -1,5 +1,11 @@
 Exercise 4-4.  Write a word counting program in your favorite programming
-language and compare its size, speed and maintainabil;ity with the word-
+language and compare its size, speed and maintainability with the word-
 counting pipeline. How easily can you convert it into a spelling checker?
 
-Solution 4-4.  See wc.c, 
+Solution 4-4.
+See top10.c.
+
+TODO: time different implementations. Both the pipeline implementation and C
+implementations are too fast to time with basic tools (time built-in,
+/usr/bin/time).
+
