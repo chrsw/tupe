@@ -23,8 +23,6 @@ struct tnode zero = {"none", 0, 0, NULL, NULL};
 
 static char buf[BUFSIZ];
 static int bufp = 0;
-int top[10] = {0};              /* ten highest counts */
-int rcount = 0;                     /* iterate over tree */
 struct tnode *topcounts[10];
 
 
@@ -56,8 +54,9 @@ int main(int argc, char *argv[])
             root = addtree(root, word);
             wc++;
         }
-    ranktree(root);
-    printtop();
+    ranktree(root);                     /* Ranking the top 10 most */
+                                        /* seen words on input */
+    printtop();                         /* print top 10 most seen words */
 
     return 0;
 }
@@ -159,7 +158,7 @@ void inserttop(struct tnode *p)
     return;
 }
 
-
+/* inittop:  initialize (clear) memory for points to top 10 word counts */
 void inittop(void)
 {
     int i = 0;
@@ -167,6 +166,8 @@ void inittop(void)
         topcounts[i] = &zero;
 }
 
+
+/* printtop:  print the top 10 most frequently found words to standard output */
 void printtop(void)
 {
     int i;
