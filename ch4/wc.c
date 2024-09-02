@@ -32,15 +32,12 @@ struct tnode *topcounts[10];
 int getch(void);
 void ungetch(int);
 struct tnode *addtree(struct tnode *, char *);
-struct tnode *addrank(struct tnode *, struct tnode *);
-void treeprint(struct tnode *);
-void ranktree(struct tnode *);
 int getword(char *, int);
 struct tnode *talloc(void);
-int istop(struct tnode *);
-void rankprint(struct tnode *p);
-void inittopcounts(void);
-void printtopten(void);
+void inserttop(struct tnode *);
+void ranktree(struct tnode *p);
+void inittop(void);
+void printtop(void);
 
 /* word frequency count */
 int main(int argc, char *argv[])
@@ -53,21 +50,14 @@ int main(int argc, char *argv[])
     root = NULL;
     rank = NULL;
 
-    inittopcounts();
+    inittop();
     while (getword(word, MAXWORD) != EOF)
         if (isalpha(word[0])) {
             root = addtree(root, word);
             wc++;
         }
-    //treeprint(root);
-    rankprint(root);
-    printf("words = %d\n", wc);
-    printtopten();
-    //ranktree(rank);
-    //rankprint(root);
-    rank = malloc((sizeof(struct tnode *))*wc);
-    if (rank == NULL)
-        return -1;
+    ranktree(root);
+    printtop();
 
     return 0;
 }
@@ -117,56 +107,12 @@ struct tnode *addtree(struct tnode *p, char *w)
 }
 
 
-/* addrank:  add a node with w, at or below p, count sort */
-struct tnode *addrank(struct tnode *r, struct tnode *p)
-{
-    if (r == NULL) {                /* new sort */
-        r = talloc();               /* make a new node */
-        r->left = r->right = NULL;
-
-    } else if (r->count > p->count)
-        p->left = addrank(r, p);
-    else                            /* less than into right subtree */
-        p->right = addrank(r, p);
-    return p;
-}
-
-
-/* treeprint:  in-order print of tree p */
-void treeprint(struct tnode *p)
-{
-    if (p != NULL) {
-        treeprint(p->left);
-        printf("%4d %s\n", p->count, p->word);
-        treeprint(p->right);
-    }
-}
-
-
-/* rankprint:  print tree and look at node counts */
-void rankprint(struct tnode *p)
-{
-    if (p != NULL) {
-        //printf("%4d %s\n", p->count, p->word);
-        rankprint(p->left);
-        printf("%4d %s", p->count, p->word);
-        if (istop(p)) {
-            printf("  --  top 10!\n");
-        } else {
-            printf("\n");
-        }
-        rankprint(p->right);
-    }
-}
-
-
-/* ranktree:  build a tree based off count number */
+/* ranktree:  print tree and look at node counts */
 void ranktree(struct tnode *p)
 {
     if (p != NULL) {
         ranktree(p->left);
-        //printf("%4d %s\n", p->count, p->word);
-        addrank(p, p);
+        inserttop(p);
         ranktree(p->right);
     }
 }
@@ -196,32 +142,32 @@ void ungetch(int c) {
 }
 
 
-/* istop:  is this count in the top 10? */
-int istop(struct tnode *p)
+/* inserttop:  is this count in the top 10? */
+void inserttop(struct tnode *p)
 {
     int i;
     int j;
 
-    if (!p) return 0;
+    if (!p) return;
     for (i = 0; i < 10; i++)
         if (p->count > topcounts[i]->count) {
             for (j = 9; j >= i; j--)
                 topcounts[j] = topcounts[j-1];
             topcounts[i] = p;
-            return p->count;
+            return;
         }
-        return 0;
+    return;
 }
 
 
-void inittopcounts(void)
+void inittop(void)
 {
     int i = 0;
     for (i = 0; i < 10; i++)
         topcounts[i] = &zero;
 }
 
-void printtopten(void)
+void printtop(void)
 {
     int i;
     for (int i = 0; i < 10; i++)
