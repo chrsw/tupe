@@ -172,6 +172,6 @@ void inittop(void)
 /* printtop:  print the top 10 most frequently found words to standard output */
 void printtop(void)
 {
-    for (int i = 0; i < 10; i++)
-        printf("%4d %s\n", topwords[i]->count, topwords[i]->word);
+    for (int i = 9; i >= 0; i--)
+        printf("%7d %s\n", topwords[i]->count, topwords[i]->word);
 }
