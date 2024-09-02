@@ -1,5 +1,9 @@
-/* wc:  simple word counting for Exercise 4-4 */
-/* from K&R2 Section 6.5 Self-referential structures */
+/* wc:  simple word counting for Exercise 4-4 
+ *
+ * Print the 10 most frequently appearing words from the input stream.
+ * The words are printed in increasing order along with their counts.
+ * Started from K&R2 Section 6.5 Self-referential structures.
+ */
 
 #include <stdio.h>
 #include <ctype.h>
