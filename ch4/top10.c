@@ -6,6 +6,12 @@
  * Print the 10 most frequently appearing words from the input stream.
  * The words are printed in increasing order along with their counts.
  * Started from K&R2 Section 6.5 Self-referential structures.
+ *
+ * Build:
+ *  $ gcc -Wall -Wextra -Wpedantic -o top10 top10.c
+ *
+ * Run:
+ *  $ cat example.txt | ./top10
  */
 
 #include <stdio.h>
