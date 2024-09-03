@@ -48,11 +48,12 @@ void printtop(void);
 int main(int argc, char *argv[])
 {
     struct tnode *root;                 /* for sorting alphabetically */
-    struct tnode *rank;                 /* for sorting by count */
     char word[MAXWORD];
 
+    (void)argc;
+    (void)argv;
+
     root = NULL;
-    rank = NULL;
 
     inittop();
     while (getword(word, MAXWORD) != EOF)
