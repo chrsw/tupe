@@ -5,7 +5,9 @@ counting pipeline. How easily can you convert it into a spelling checker?
 Solution 4-4.
 See top10.c.
 
-The C implementation is about 3 times faster than the pipeline implementation.
+The C implementation is about 3 times faster than the pipeline implementation
+on some input data and slightly slower on others. Larger appears to be better
+for the C version.
 But the C implementation took many times longer to develop.
 
 
@@ -24,4 +26,20 @@ $ time cat ../extra/the_colour_of_space.txt | ./top10 | 5
 real	0m0.013s
 user	0m0.015s
 sys	    0m0.011s
+
+$ time cat ../extra/the_knights_tale.txt | ./wcp
+      8 his   	    8 our   	 10 a	       10 I	     12 to
+     14 in    	   16 of    	 17 and	       20 And	     22 the
+
+real	0m0.009s
+user	0m0.009s
+sys	    0m0.014s
+
+$ time cat ../extra/the_knights_tale.txt | ./top10 | 5
+      8 his   	    8 at    	 10 a	       10 I	     12 to
+     14 in    	   16 of    	 17 and	       20 And	     22 the
+
+real	0m0.012s
+user	0m0.013s
+sys	    0m0.005s
 
