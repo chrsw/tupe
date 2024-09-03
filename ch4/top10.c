@@ -25,6 +25,7 @@ struct tnode {                  /* the tree node */
     struct tnode *right;        /* right child */
 };
 
+/* globals */
 struct tnode zero = {"", 0, NULL, NULL};
 static char buf[BUFSIZ];
 static int bufp = 0;
@@ -95,14 +96,14 @@ struct tnode *addtree(struct tnode *p, char *w)
 {
     int cond;
 
-    if (p == NULL) {                /* a new word has arrived */
-        p = talloc();               /* make a new node */
+    if (p == NULL) {                    /* a new word has arrived */
+        p = talloc();                   /* make a new node */
         p->word = strdup(w);
         p->count = 1;
         p->left = p->right = NULL;
     } else if ((cond = strcmp(w, p->word)) == 0)
-        p->count++;                 /* repeated word */
-    else if (cond < 0)              /* less than into left sub-tree */
+        p->count++;                     /* repeated word */
+    else if (cond < 0)                  /* less than into left sub-tree */
         p->left = addtree(p->left, w);
     else                            /* greater than into right sub-tree */
         p->right = addtree(p->right, w);
@@ -110,7 +111,7 @@ struct tnode *addtree(struct tnode *p, char *w)
 }
 
 
-/* ranktree:  print tree and look at node counts */
+/* ranktree:  find top 10 words by frequency */
 void ranktree(struct tnode *p)
 {
     if (p != NULL) {
@@ -118,6 +119,37 @@ void ranktree(struct tnode *p)
         inserttop(p);
         ranktree(p->right);
     }
+}
+
+
+/* inserttop:  put a node in the top 10 list */
+void inserttop(struct tnode *p)
+{
+    int i, j;
+
+    for (i = 0; i < 10; i++)
+        if (p->count > topwords[i]->count) {    /* a top 10 is found */
+            for (j = 9; j >= i; j--)            /* put in correct place */
+                topwords[j] = topwords[j-1];    /* and shift everything */
+            topwords[i] = p;                    /* else down */
+            return;
+        }
+}
+
+
+/* printtop:  print top 10 common words, 10th first */
+void printtop(void)
+{
+    for (int i = 9; i >= 0; i--)
+        printf("%7d %s\n", topwords[i]->count, topwords[i]->word);
+}
+
+
+/* inittop:  initialize (clear) memory for points to top 10 word counts */
+void inittop(void)
+{
+    for (int i = 0; i < 10; i++)
+        topwords[i] = &zero;
 }
 
 
@@ -144,34 +176,3 @@ void ungetch(int c) {
         buf[bufp++] = c;
 }
 
-
-/* inserttop:  put a node in the correct place in top 10 list */
-void inserttop(struct tnode *p)
-{
-    int i;
-    int j;
-
-    for (i = 0; i < 10; i++)
-        if (p->count > topwords[i]->count) {       /* a top 10 is found */
-            for (j = 9; j >= i; j--)                /* put in correct place */
-                topwords[j] = topwords[j-1];      /* and shift everything */
-            topwords[i] = p;                       /* else down */
-            return;
-        }
-}
-
-
-/* inittop:  initialize (clear) memory for points to top 10 word counts */
-void inittop(void)
-{
-    for (int i = 0; i < 10; i++)
-        topwords[i] = &zero;
-}
-
-
-/* printtop:  print the top 10 most frequently found words to standard output */
-void printtop(void)
-{
-    for (int i = 9; i >= 0; i--)
-        printf("%7d %s\n", topwords[i]->count, topwords[i]->word);
-}

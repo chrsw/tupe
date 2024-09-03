@@ -5,7 +5,23 @@ counting pipeline. How easily can you convert it into a spelling checker?
 Solution 4-4.
 See top10.c.
 
-TODO: time different implementations. Both the pipeline implementation and C
-implementations are too fast to time with basic tools (time built-in,
-/usr/bin/time).
+The C implementation is about 3 times faster than the pipeline implementation.
+But the C implementation took many times longer to develop.
+
+
+$ time cat ../extra/the_colour_of_space.txt | ./wcp
+    150 it    	  192 that  	206 had	      218 in	    225 a
+    227 to    	  250 was   	319 of	      521 and	    881 the
+
+real	0m0.037s
+user	0m0.038s
+sys	    0m0.016s
+
+$ time cat ../extra/the_colour_of_space.txt | ./top10 | 5
+    150 it    	  192 that  	206 had	      218 in	    225 a
+    227 to    	  250 was   	319 of	      521 and	    881 the
+
+real	0m0.013s
+user	0m0.015s
+sys	    0m0.011s
 
