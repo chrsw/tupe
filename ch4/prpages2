@@ -1,0 +1,5 @@
+# prpages2:  compute number of pages that pr will print, alternate
+#            this version uses 'pr' itself
+#            Solution 4-8 part 1
+pr $* |
+awk     'END { print NR/66 }'

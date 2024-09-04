@@ -11,7 +11,7 @@ The following table is a list of exercises and solutions.
 |4-5     |ex4-5_newer, ex4-5_older        |        |
 |4-6     |        |        |
 |4-7     |copy-1.awk, copy-2.awk        |        |
-|4-8     |        |        |
+|4-8     |prpages2, prpages3        |        |
 |4-9     |        |        |
 |4-10    |        |        |
 |4-11	 |        |        |

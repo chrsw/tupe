@@ -1,0 +1,6 @@
+# prpages3:  compute number of pages that pr will print
+#            this version uses more math
+#            Solution 4-8 part 2
+wc $* |
+awk '!/ total$/ { n += int($1 + (56-($1 % 56))) }
+     END        { print n / 56 }'
