@@ -1,0 +1,8 @@
+# compare:  compare files in main directory vs backup directory
+#           From Section 3.8
+
+for i in `./pick ch2.*`
+do
+    echo $i:
+    diff old/$i $i
+done | pr | lpr
