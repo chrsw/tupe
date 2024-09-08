@@ -1,0 +1,6 @@
+Exercise 5-8.  Modify `which` to check execute permissions on the files. Change
+               it to print an error message when a file cannot be found.
+
+
+Solution 5-8
+See ex5-8_which.sh
