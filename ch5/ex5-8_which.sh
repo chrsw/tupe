@@ -21,5 +21,5 @@ do
 	fi
 done
 
-echo "which: $1 not found" 1>&2; exit 1
+echo "which: $1 not found or not executable" 1>&2; exit 1
 
