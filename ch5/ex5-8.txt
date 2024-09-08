@@ -3,4 +3,4 @@ Exercise 5-8.  Modify `which` to check execute permissions on the files. Change
 
 
 Solution 5-8
-See ex5-8_which.sh
+See ex5-8_which

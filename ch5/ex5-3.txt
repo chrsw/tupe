@@ -11,7 +11,7 @@ January or next year's?  When should have stopped adding features to `cal`.
 
 
 Solution 5-3
-For a version of `cal` that accepts a list of months, see ex5-3.sh. This
+For a version of `cal` that accepts a list of months, see ex5-3. This
 version calls `cal` for each month on the script command line.
 If it's now December and `cal` is asked to print the calendar for the month
 of January, the logical thing to do is to print the calendar for the month

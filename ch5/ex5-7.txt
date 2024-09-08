@@ -2,13 +2,13 @@ Exercise 5-7.  Modify `which` so it knows about shell built-ins like `exit`.
 
 
 Solution 5-7
-See ex5-7_which.sh.
+See ex5-7_which.
 
-	$ ./ex5-7_which.sh ls
+	$ ./ex5-7_which ls
 	/usr/bin/ls
 
-	$ ./ex5-7_which.sh exit
+	$ ./ex5-7_which exit
 	exit builtin
 
-	$ ./ex5-7_which.sh no_such_command
+	$ ./ex5-7_which no_such_command
 	$
