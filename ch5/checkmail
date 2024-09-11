@@ -1,0 +1,14 @@
+#!/bin/sh
+# checkmail:  watch mailbox for growth
+
+PATH=/bin:/usr/bin
+MAIN=/usr/spool/mail/`getname` # system
+
+t=${1-60}
+while :
+do
+    y="'ls -l $MAIL'"
+    echo $x $y
+    x="$y"
+    sleep $t
+done | awk '$4 < $12 { print "You have mail" }'
