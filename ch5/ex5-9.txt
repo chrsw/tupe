@@ -1,0 +1,34 @@
+Exercise 5-9. Look at the implementation of `true` and `false` in `/bin` or `/usr/bin`. (How would you find where they are?)
+
+
+Solution 5-9
+To find where `true` and `false` are on the system one can try:
+
+    $ which true || which false
+    /usr/bin/true
+    /usr/bin/false
+
+To find what types of files these are, one can use the `file` utility:
+
+    $ (file `which true` && file `which false`) | awk -F',' '{print $1}'
+    /usr/bin/true: ELF 64-bit LSB shared object
+    /usr/bin/false: ELF 64-bit LSB shared object
+
+Since these are both executable files, the source package where these files
+come from would need to be inspected.
+
+    $ apt-get source coreutils
+    $ find coreutils-8.30 -type f -iregex '.*true.c' -print && find coreutils-8.30 -type f -iregex '.*false.c' -print
+    coreutils-8.30/src/true.c
+    coreutils-8.30/src/false.c
+
+The are C programs. The implementation of both `ture` and `false` essentially
+boil down to:
+
+int
+main()
+{
+    return EXIT_SUCCESS; // or EXIT_FAILURE
+}
+
+Perhaps another way to do this is with a shells script.
