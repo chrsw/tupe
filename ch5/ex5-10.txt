@@ -1,0 +1,10 @@
+Exercise 5-10.  Change `watchfor` so that multiple arguments are treated as
+different people, rather than requiring the user to type 'joe|mary'.
+
+
+Solution 5-10
+See ex5-10_watchfor script.
+This script uses a for loop inside an until loop to search for each user
+specified on the command line in the output of the `who` command. If the
+search returns true then a word is written to a temporary file. In the outer
+until loop, there is a test for the word in the temporary file.

@@ -13,7 +13,7 @@ The following table is a list of exercises and solutions.
 |5-7     |ex5-7.txt, ex5-7_which             |        |
 |5-8     |ex5-8.txt, ex5-8_which             |        |
 |5-9     |ex5-9.txt                          |        |
-|5-10    |                                   |        |
+|5-10    |ex5-10.txt, ex5-10_watchfor        |        |
 |5-11    |                                   |        |
 |5-12    |                                   |        |
 |5-13    |                                   |        |

@@ -1,0 +1,22 @@
+#!/bin/sh
+# ex5-10_watchfor:  watch for someone to log in, Exercise 5-10 version
+# accept users to watch for as separate command line arguments
+
+PATH=/bin:/usr/bin
+touch /tmp/watchfor.$$
+
+case $# in
+	0) echo `Usage: watchfor person` 1>&2; exit 1
+esac
+
+until grep watchfor /tmp/watchfor.$$
+do
+    for i
+    do
+        if who | grep $i
+        then
+            cat "watchfor" > /tmp/watchfor.$$
+        fi
+    done
+    sleep 60
+done
