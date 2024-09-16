@@ -1,5 +1,9 @@
 #!/bin/sh
 # watchwho:  watch who logs in and out
+# this does not work on the test system: Ubuntu 20.04, no output appears.
+# apparently the shell does not like piping the output of the while loop
+# into the next command, in this case, 'awk'. not sure why, still looking
+# into it. for the workaround, see watchwho2.
 
 PATH=/bin:/usr/bin
 new=/tmp/wwho1.$$
