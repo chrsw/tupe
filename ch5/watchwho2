@@ -1,0 +1,23 @@
+#!/bin/sh
+# watchwho2:  watch who logs in and out
+# working version. this is updated from the text version of 'watchwho'. in this
+# version, the diff output is piped to awk, not the output of the entire
+# 'while' loop. this could have something to do with the version of the shell
+# used for this exercise. in any case, this version has output, the text
+# version does not so the solution to Exercise 5-11 will be based on this
+# version.
+
+PATH=/bin:/usr/bin
+new=/tmp/wwho1.$$
+old=/tmp/wwho2.$$
+>$old           # create an empty file
+
+while true;         # loop forever
+do
+    who >$new
+    diff $old $new | awk ' />/ { $1 = "in:      "; print }
+                           /</ { $1 = "out:     "; print }'
+    mv $new $old
+    sleep 10
+done
+
