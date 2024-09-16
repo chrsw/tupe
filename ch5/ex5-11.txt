@@ -1,0 +1,10 @@
+Exercise 5-11.  Write a version of `watchwho` that uses `comm` instead of
+`awk` to compare the old and new data. Which version do you prefer?
+
+
+Solution 5-11
+comm - compare two sorted files line by line
+See ex5-11_watchwho
+Using 'comm' instead of 'diff' isn't a big difference. Instead of looking
+for 'diff' output, look for the number of fields: 1 field for user logged in,
+two fields for user logged out, 3 fields for nothing changed.
