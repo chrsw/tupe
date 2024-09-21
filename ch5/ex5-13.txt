@@ -1,0 +1,13 @@
+Exercise 5-13.  What is the difference between the shell : do-nothing
+command and the # comment character? Are both needed?
+
+
+Solution 5-13
+The difference between the shell : do-nothing command and the # comment
+character is that : can be used where a command is expected. # can be used
+to ignore all text remaining on a line. These are different purposes and
+errors will be reported if they are exchanged.
+: may not always need a # comment, like extra explanation. # comments cause
+the shell to ignore the rest of the line, which may not be desired either.
+In fact, : and # can both be used on the same line for different purposes.
+They are both needed.
