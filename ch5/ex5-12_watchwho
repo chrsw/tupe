@@ -1,0 +1,17 @@
+#!/bin/sh
+# watchwho:  watch who logs in and out, variable version
+# part of Exercise 5-12.
+
+PATH=/bin:/usr/bin
+whonew=/tmp/wwho1.$$
+whoold=/tmp/wwho2.$$
+>$whoold
+while :         # loop forever
+do
+    who2=`who`
+    echo "$who2" > $whonew
+    diff "$whoold" "$whonew"
+    cp "$whonew" "$whoold"
+    sleep 10
+done | awk '/>/ { $1 = "in:      "; print }
+            /</ { $1 = "out:     "; print }'

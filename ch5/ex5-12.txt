@@ -1,0 +1,16 @@
+Exercise 5-12:  Write a version of 'watchwho' that stores the who output in
+a shell variable instead of files. Which version do you prefer? Which version
+runs faster? Should 'watchwho' and 'checkmail' do & automatically?
+
+
+Solution 5-12
+See ex5-12_watchwho. The output of `who` is stored in variable first, then
+a file. This version will be slower since it involves an extra variable step.
+The test system's POSIX shell doesn't support sub-shell redirection like the
+Bash shell:
+
+    $ diff <(echo $who1) <(echo $who2)
+
+Which would be useful and perhaps faster in this case.
+
+TODO: Benchmark the Bash solution with sub-shell redirection
