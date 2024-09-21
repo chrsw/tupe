@@ -1,9 +1,8 @@
 #!/bin/sh
 # watchwho:  watch who logs in and out
-# this does not work on the test system: Ubuntu 20.04, no output appears.
-# apparently the shell does not like piping the output of the while loop
-# into the next command, in this case, 'awk'. not sure why, still looking
-# into it. for the workaround, see watchwho2.
+# requires the 'gawk' version of 'awk', or something that handles unbuffered
+# input by default, which 'mawk' does not:
+# https://github.com/ThomasDickey/original-mawk/issues/41
 
 PATH=/bin:/usr/bin
 new=/tmp/wwho1.$$
