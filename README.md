@@ -12,3 +12,5 @@ After cloning, add the projects bin/ directory to the path. For example:
 ```
 export PATH=$PATH:~/proj/tupe2/bin
 ```
+
+Shell scripts tested with example code or at least tested with `sh -n <script>'
