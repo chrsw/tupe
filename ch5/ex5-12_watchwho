@@ -12,6 +12,6 @@ do
     echo "$who2" > $whonew
     diff "$whoold" "$whonew"
     cp "$whonew" "$whoold"
-    sleep 10
+    sleep 60
 done | awk '/>/ { $1 = "in:      "; print }
             /</ { $1 = "out:     "; print }'

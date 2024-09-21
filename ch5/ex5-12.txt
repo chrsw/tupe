@@ -11,6 +11,11 @@ Bash shell:
 
     $ diff <(echo $who1) <(echo $who2)
 
-Which would be useful and perhaps faster in this case.
+For the Bash version, see ex5-12_watchwho.bash. It's difficult to benchmark
+these because they run so fast on modern systems like the test system. The
+Bash version has extra processing in the 'awk' portion to skip blank lines.
 
-TODO: Benchmark the Bash solution with sub-shell redirection
+
+'watcho' and 'checkmail' do not need & automatically. & will free up the
+terminal but will make the commands harder to kill/exit. A better solution
+would be to run the commands in another terminal or a virtual terminal.
