@@ -13,5 +13,5 @@ do
     diff "$whoold" "$whonew"
     cp "$whonew" "$whoold"
     sleep 60
-done | awk '/>/ { $1 = "in:      "; print }
-            /</ { $1 = "out:     "; print }'
+done | gawk '/>/ { $1 = "in:      "; print }
+             /</ { $1 = "out:     "; print }'

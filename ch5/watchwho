@@ -14,6 +14,6 @@ do
     who >$new
     diff $old $new
     mv $new $old
-    sleep 60
-done | awk '/>/ { $1 = "in:      "; print }
+    sleep 10
+done | gawk '/>/ { $1 = "in:      "; print }
             /</ { $1 = "out:     "; print }'

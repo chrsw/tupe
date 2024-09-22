@@ -10,9 +10,8 @@ old=/tmp/wwho2.$$
 while :         # loop forever
 do
     who >$new
-    comm $old $new 2>/dev/null | awk -F'\t' 'NF == 1 { print "out:     " $1}
-                                             NF == 2 { print "in:      " $2}'
+    comm $old $new 2>/dev/null
     mv $new $old
     sleep 10
-done
-
+done | gawk -F'\t' 'NF == 1 { print "out:     " $1}
+                    NF == 2 { print "in:      " $2}'
