@@ -11,4 +11,6 @@ Compare your design with
 
 
 Solution 6-1
-
+See ex6-1_vis.c.
+'sed -n 1' returns an error on the test system. It seems this is supposed
+to suppress printing of all input lines except line one?
