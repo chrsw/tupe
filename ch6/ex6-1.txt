@@ -1,0 +1,14 @@
+Exercise 6-1.  We decided that tabs should be left alone, rather than made
+visible as \011 or -> or \t, since our main use of `vis` is looking for truly
+anomalous characters. An alternate design is to identify _every_ character
+of output unambiguously -- tabs, non-graphics, blanks at line ends, etc. Modify
+`vis` so that characters like tab, backslash, backspace, formfeed, etc., are
+printed in their conventional C representations \t, \\, \b, \f, etc., and so
+that blanks at the ends of lines are marked. Can you do this unambiguously?
+Compare your design with
+
+    $ sed -n 1
+
+
+Solution 6-1
+
