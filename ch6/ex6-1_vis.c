@@ -5,10 +5,19 @@
  *
  * Design:
  *  Read in characters up to EOF
+ *  Print non-printable character escapre sequence string
  *  If a character is blank, don't print add to buffer
  *  If character is non-blank, flush blank buffer
  *  Copy buffer to output
  *  Print non-blank character
+ *
+ * Build:
+ *  $ gcc -o ex6-1_vis ex6-1_vis.c
+ *
+ * Run:
+ *  $ cat ex6-1_test3.txt | ./ex6-1_vis
+ *  - or -
+ *  $ printf "hello\x07aa\x08bb" | ./ex6-1_vis
  * 
  */
 
@@ -38,6 +47,7 @@ int main(void)
     int i = 0;
 	
     while ((c = getchar()) != EOF) {
+        /* print "funny" character escape sequence */ 
         switch (c) {
             case 7:
                 fputs("\\a", stdout);
@@ -64,6 +74,7 @@ int main(void)
                 break;
         }
 
+        /* skip blank characters at end of line */
         if (c == ' ' || c == '\t')
             blankbuf[i++] = (char)c;
         else if (c == '\n'){
