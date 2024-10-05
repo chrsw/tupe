@@ -1,0 +1,9 @@
+a set of test input for exercise 6-1
+added blanks at the end of the line:            
+
+¬
+
+non printable: 
+another: 
+end
+

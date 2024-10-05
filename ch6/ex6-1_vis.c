@@ -40,25 +40,25 @@ int main(void)
     while ((c = getchar()) != EOF) {
         switch (c) {
             case 7:
-                puts("\a");
+                fputs("\\a", stdout);
                 break;
             case 8:
-                puts("\b");
+                fputs("\\b", stdout);
                 break;
             case 9:
-                puts("\t");
+                fputs("\\t", stdout);
                 break;
             case 10:
-                puts("\n");
+                fputs("\\n", stdout);
                 break;
             case 11:
-                puts("\v");
+                fputs("\\v", stdout);
                 break;
             case 12:
-                puts("\f");
+                fputs("\\f", stdout);
                 break;
             case 13:
-                puts("\r");
+                fputs("\\r", stdout);
                 break;
             default:
                 break;
