@@ -1,0 +1,11 @@
+a set of test input for exercise 6-1
+added blanks at the end of the line:            
+
+¬
+
+non printable: 
+another: 
+end
+
+very long line at the end of the test input file to test the new folding functionality added to exercise 6-2 solution
+
