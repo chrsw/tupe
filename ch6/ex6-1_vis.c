@@ -5,7 +5,7 @@
  *
  * Design:
  *  Read in characters up to EOF
- *  Print non-printable character escapre sequence string
+ *  Print non-printable character escape sequence string
  *  If a character is blank, don't print add to buffer
  *  If character is non-blank, flush blank buffer
  *  Copy buffer to output
@@ -18,10 +18,12 @@
  *  $ cat ex6-1_test3.txt | ./ex6-1_vis
  *  - or -
  *  $ printf "hello\x07aa\x08bb" | ./ex6-1_vis
+ *
+ * Test:
+ * Dealing with non-printable characters in the Vim editor
+ * https://stackoverflow.com/questions/4185707/how-do-i-paste-non-ascii-characters-into-vim
  * 
- */
-
-/* Escape sequences that will be used in this exercise are from this ASCII 
+ * Escape sequences that will be used in this exercise are from this ASCII 
  * table snippet:
  *     007   7     07    BEL '\a' (bell)
  *     010   8     08    BS  '\b' (backspace)
@@ -32,12 +34,14 @@
  *     015   13    0D    CR  '\r' (carriage ret)
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 
 #define MAX_LINE_LEN 4095
+
+enum escapes { BELL = '\a', BACKSPACE = '\b', TAB = '\t', NEWLINE = '\n',
+               VTAB = '\v', FORMFEED = '\f', RETURN = '\r' };
 
 char blankbuf[MAX_LINE_LEN];
 
@@ -49,25 +53,25 @@ int main(void)
     while ((c = getchar()) != EOF) {
         /* print "funny" character escape sequence */ 
         switch (c) {
-            case 7:
+            case BELL:
                 fputs("\\a", stdout);
                 break;
-            case 8:
+            case BACKSPACE:
                 fputs("\\b", stdout);
                 break;
-            case 9:
+            case TAB:
                 fputs("\\t", stdout);
                 break;
-            case 10:
+            case NEWLINE:
                 fputs("\\n", stdout);
                 break;
-            case 11:
+            case VTAB:
                 fputs("\\v", stdout);
                 break;
-            case 12:
+            case FORMFEED:
                 fputs("\\f", stdout);
                 break;
-            case 13:
+            case RETURN:
                 fputs("\\r", stdout);
                 break;
             default:
@@ -75,9 +79,9 @@ int main(void)
         }
 
         /* skip blank characters at end of line */
-        if (c == ' ' || c == '\t')
+        if ((c == ' ' || c == '\t') && i < MAX_LINE_LEN)
             blankbuf[i++] = (char)c;
-        else if (c == '\n'){
+        else if (c == '\n') {
             i = 0;
             putchar(c);
         }
