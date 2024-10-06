@@ -1,0 +1,7 @@
+Exercise 6-2.  Modify vis so that it folds long lines at some reasonable
+length. How does this interact with the unambiguous output required in the
+previous exercise?
+
+
+Solution 6-2
+
