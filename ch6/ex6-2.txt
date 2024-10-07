@@ -4,4 +4,4 @@ previous exercise?
 
 
 Solution 6-2
-
+See ex6-2_vis.c
