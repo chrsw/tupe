@@ -3,7 +3,7 @@ language and compare its size, speed and maintainability with the word-
 counting pipeline. How easily can you convert it into a spelling checker?
 
 Solution 4-4.
-See top10.c.
+See top10.c and `wcp`.
 
 The C implementation is about 3 times faster than the pipeline implementation
 on some input data and slightly slower on others. Larger appears to be better
