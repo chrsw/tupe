@@ -1,4 +1,4 @@
-/* sec6_2_vis:  make funny characters visible (version 2) 
+/* sec6-2_vis:  make funny characters visible (version 2) 
  *              add an option to strip non-printing charcters
  */
 
