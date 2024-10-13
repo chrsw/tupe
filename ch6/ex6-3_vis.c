@@ -1,10 +1,12 @@
 /* ex6-3_vis:  make funny characters visible (version 2) 
- *              add an option to strip non-printing charcters
+ *              add an option to strip non-printing characters
+ *
  * Build:
  *  $ gcc -o ex6-3_vis ex6-3_vis.c
- * 
+ *
  * Run:
  *  $ cat ex6-3_test.txt | ./ex6-3_vis -s10
+ *
  */
 
 #include <stdio.h>
@@ -16,18 +18,17 @@ char buf[4095];
 
 int main(int argc, char *argv[])
 {
-    int c, strip = 0;
+    int c;
     int i = 0;
-    int n;
+    size_t n;
     char *sn;
 
     if (argc > 1 && strncmp(argv[1], "-s", 2) == 0) {
-        strip = 1;
         if (strlen(argv[1]) > 2) {          /* look for -sN */
             sn = argv[1];
             sn += 2;
             n = atoi(sn);
-            printf("n = %d\n", n);
+            //printf("n = %d\n", n);
         }
     }
 

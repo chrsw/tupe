@@ -4,3 +4,7 @@ printing characters and short sequences of printable characters. This is
 valuable for isolating the text parts of non-text files such as executable
 programs. Some versions of the system provide a `strings` program that does
 this. Is it better to have a separate program or an argument to `vis`?
+
+
+Solution 6-3
+See ex6-3_vis.c.
