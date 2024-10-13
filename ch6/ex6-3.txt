@@ -1,0 +1,6 @@
+Exercise 6-3.  Change the `-s` argument so that `vis -sn` will print only
+strings of n or more consecutive printable characters, discarding non-
+printing characters and short sequences of printable characters. this is
+valuable for isolating the text parts of non-text files such as executable
+programs. Some versions of the system provide a strings program that does
+this. Is it better to have a separate program or an argument to `vis`?
