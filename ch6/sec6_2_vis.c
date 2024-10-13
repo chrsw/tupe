@@ -1,6 +1,6 @@
-/* ex6_2_vis:  make funny characters visible (version 2) 
-               add an option to strip non-printing charcters
-*/
+/* sec6_2_vis:  make funny characters visible (version 2) 
+ *              add an option to strip non-printing charcters
+ */
 
 #include <stdio.h>
 #include <ctype.h>
