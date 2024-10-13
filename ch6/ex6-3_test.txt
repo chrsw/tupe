@@ -1,0 +1,6 @@
+five 
+seven •
+ten      ♫
+non printable: 
+even longer text ending in non-printable: ⁅
+
