@@ -8,3 +8,11 @@ this. Is it better to have a separate program or an argument to `vis`?
 
 Solution 6-3
 See ex6-3_vis.c.
+
+It is better to have a separate program discard non-printing characters and
+short strings of printing characters, like the `strings` program. Part of
+the UNIX philosophy is that programs should be simple and do one thing or
+a small amount of related things. Larger and more complex programs can be
+built from collecting different smaller simple programs. Its easier to think
+about the interactions between smaller programs using well defined interfaces
+than it is to build larger monolithic programs that do many different things.
