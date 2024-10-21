@@ -1,0 +1,6 @@
+this file doesn't only
+contain printable characters
+example:
+    ∈
+maybe next time try a control character
+
