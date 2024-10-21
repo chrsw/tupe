@@ -1,0 +1,17 @@
+Exercise 6-5.  Write a program `printable` that prints the name of each
+argument file that contains only printable characters; if the file contains any
+non-printable character, the name is not printed. `printable` is useful in
+situations like this:
+
+	$ pr `printable *` | lpr
+
+Add the option -v to invert the sense of the test, as in `grep`. What should
+`printable` do if there are no filename arguments? What status should
+`printable` return?
+
+
+Solution 6-5
+See printable.c
+
+ $ ./printable ex6-5_test1.txt ex6-5_test2.txt
+ ex6-5_test1.txt
