@@ -1,5 +1,12 @@
 /* sec6-3_vis:  make funny characters visible (version 3) 
  *              specifiy files to open on command line
+ * 
+ * Build:
+ *  $ gcc -Wall -Wextra -Wpedantic -o ex6-3_vis ex6-3_vis.c
+ *
+ * Run:
+ *  $ cat ex6-3_test.txt | ./sec6-3_vis -s ex6-2_test.txt
+ * 
  */
 
 #include <stdio.h>
@@ -34,7 +41,7 @@ int main(int argc, char *argv[])
         vis(stdin);
     else
         for (i = 1; i < argc; i++)
-            if ((fp=fopen(argv[i], "r")) == NULL){
+            if ((fp=fopen(argv[i], "r")) == NULL) {
                 fprintf(stderr, "%s: can't open %s\n", argv[0], argv[i]);
                 exit(1);
             } else {
