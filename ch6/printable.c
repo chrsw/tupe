@@ -47,7 +47,9 @@ int main(int argc, char *argv[])
         } else {
             if (isvis(fp))
 	           	printf("%s\n", argv[i]);
-                fclose(fp);
+	        else if (!(isvis(fp)) && invert)
+	        	printf("%s\n", argv[i]);
+            fclose(fp);
         }
     exit(0);
 }
