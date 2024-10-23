@@ -4,10 +4,10 @@
  *  See ex6-5.txt
  *
  * Build:
- *  $ gcc -o printable printable.c
+ *  $ gcc -Wall -o printable printable.c
  *
  * Run:
- *  $ printable *
+ *  $ ./printable *
  *
  */
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
                 invert = 1;
                 break;
             default:
-                fprintf(stderr, "%s: unknown arg %s\n", argv[0], argv[i]);
+                fprintf(stderr, "%s: unknown arg %s\n", argv[0], argv[1]);
                 exit(1);
         }
         argc--;
