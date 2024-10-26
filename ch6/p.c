@@ -10,7 +10,7 @@
 char *progname; 	/* program name for error messsages */
 
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 	FILE *fp, *efopen();
@@ -25,7 +25,7 @@ void main(int argc, char *argv[])
 			print(fp, PAGESIZE);
 			fclose(fp);
 		}
-	exit(0);
+	return 0;
 }
 
 
