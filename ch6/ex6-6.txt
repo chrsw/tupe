@@ -1,0 +1,8 @@
+Exercise 6-6.  Does `p` act sanely if `pagesize` is not positive?
+
+
+Solution 6-6
+The version 2 of `p` uses a page size of 1 if a negative page size number
+is specified on the command line.
+See ex6-6_p.c for a modified version of p2.c which reverts to a default
+page size if the page size specified on the command line isn't sensible.
