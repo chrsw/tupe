@@ -22,15 +22,16 @@ int main(int argc, char *argv[])
 	progname = argv[0];
 	if ((argc > 1 ) && argv[1][0] == '-') {
 		pagesize = atoi(&argv[1][1]);
+		printf("p2: pagesize = %d\n", pagesize);
 		argc--;
 		argv++;
 	}
 	if (argc == 1)
-		print(stdin, PAGESIZE);
+		print(stdin, pagesize);
 	else
 		for (i = 1; i < argc; i++) {
 			fp = efopen(argv[i], "r");
-			print(fp, PAGESIZE);
+			print(fp, pagesize);
 			fclose(fp);
 		}
 	return 0;
