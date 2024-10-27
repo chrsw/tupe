@@ -3,6 +3,8 @@
  * Modified for a more modern style.
  *
  * $ gcc -o p2 p2.c
+ * 
+ * $ cat file | ./p2 -20
  *
  */
 #include <stdio.h>
