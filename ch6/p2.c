@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
 	progname = argv[0];
 	if ((argc > 1 ) && argv[1][0] == '-') {
 		pagesize = atoi(&argv[1][1]);
-		printf("p2: pagesize = %d\n", pagesize);
 		argc--;
 		argv++;
 	}
