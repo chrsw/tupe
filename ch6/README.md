@@ -9,9 +9,10 @@ The following table is a list of exercises and solutions.
 |6-3     |ex6-3.txt, ex6-3_vis.c, ex6-3_test.txt    |        |
 |6-4     |ex6-4.txt                          |        |
 |6-5     |ex6-5.txt, printable.c, ex6-5_test1.txt, ex6-5_test2.txt                          |        |
-|6-6     |                 |        |
+|6-6     |ex6-6.txt, p.c, p2.c, ex6_6_p.c    |        |
 |6-7     |                                   |        |
 |6-8     |                                   |        |
 |6-9     |                                   |        |
 |6-10    |                                   |        |
 |6-11    |                                   |        |
+
