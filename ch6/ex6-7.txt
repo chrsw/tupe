@@ -1,0 +1,9 @@
+Exercise 6-7.  What else can be done to p? Evaluate and implement (if
+appropriate) the ability to re-print parts of earlier input. (This is one
+extra feature that we enjoy.) Add a facility to permit printing less than a
+screenful of input after each pause. Add a facility to scan forward or 
+backward for a line specified by number or context.
+
+
+Solution 6-7
+For part 1 of solution see p3.c.
