@@ -13,6 +13,6 @@ The following table is a list of exercises and solutions.
 |6-7     |ex6-7.txt, p3.c                    |        |
 |6-8     |                                   |        |
 |6-9     |                                   |        |
-|6-10    |                                   |        |
+|6-10    |ex6-10.txt                         |        |
 |6-11    |                                   |        |
 
