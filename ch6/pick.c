@@ -27,15 +27,14 @@ int main(int argc, char *argv[])
     else
         for (i = 1; i < argc; i++)
             pick(argv[i]);
-
-        exit(0);
+    exit(0);
 }
 
 /* pick:  offer choice of s */
 void pick(char *s)
 {
-    fprintf(stderr, "%s?", s);
-    if(ttyin() == 'y')
+    fprintf(stderr, "%s? ", s);
+    if (ttyin() == 'y')
         printf("%s\n", s);
 }
 
