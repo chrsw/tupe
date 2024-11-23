@@ -1,0 +1,6 @@
+Exercise 6-10.  Given `pick`, is there a need for `rm -i`?
+
+
+Solution 6-10
+Probably there is no need for `rm -i` since the arguments to `rm` can be
+chosen interactively with `pick`.
