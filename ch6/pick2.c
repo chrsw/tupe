@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     exit(0);
 }
 
-/* pick:  offer choice of s */
+/* pick:  offer choice of s, contains an error */
 void pick(char *s)
 {
     fprintf("%s? ", s);
