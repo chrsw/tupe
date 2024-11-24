@@ -1,4 +1,8 @@
-/* zap:  interactive process killer */
+/* zap:  interactive process killer
+ *
+ * Build:
+ *  $ gcc -o zap zap.c strindex.c ttyin.c efopen.c
+ */
 
 #include <stdio.h>
 #include <sys/types.h>
@@ -8,8 +12,8 @@
 #include "strindex.h"
 #include "ttyin.h"
 
-char *progname;         /* programe name for error message */
-char *ps = "ps -ag";     /* system dependent */
+char *progname;             /* programe name for error message */
+char *ps = "ps -ag";        /* system dependent */
 
 
 int main(int argc, char *argv[])
