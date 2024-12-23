@@ -1,0 +1,16 @@
+Exercise 4-9.  The output from `wordfreq` includes text from formatting
+commands like .CW, which is used to print words in `this font`. How would
+you get rid of such non-words? How would you use `tr` to make wordfreq work
+properly regardless of the case of its input? Compare the implementation
+and performance of `wordfreq` to the pipeline from Section 4.2 and to
+this one:
+
+    sed `s/[\t][\t]*/\
+    /g` $* | sort | uniq -c | sort -nr
+
+
+Solution 4-9
+One possible way to get rid of non-words like .CW from the wordfreq
+output is to only add to the word count hash if the word matches
+a word found in an online dictionary like /usr/share/dict/words,
+which exists on the test system but may not on your system.
