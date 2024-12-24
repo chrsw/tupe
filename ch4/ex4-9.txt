@@ -54,21 +54,21 @@ real	0m0.015s
 user	0m0.015s
 sys	0m0.010s
 
-$ time cat ../extra/the_knights_tale.txt | tr '[:upper:]' '[:lower:]' | ./ex4-9_wordfreq.awk | sort +1 -nr | sed 10q
-and 35
-the 26
-of 17
-in 17
-that 13
+$ time cat ../extra/the_knights_tale.txt | ./ex4-9_wordfreq.awk | sort +1 -nr | sed 10q
+the 22
+And 20
+of 16
+and 15
+in 14
 to 12
-a 11
-on 9
-i 9
-have 9
+a 10
+I 9
+our 8
+his 8
 
-real	0m3.915s
-user	0m3.062s
-sys	0m0.827s
+real	0m3.942s
+user	0m3.168s
+sys	0m0.756s
 
 $ time sed 's/[ \t][ \t]*/\n/g' ../extra/the_knights_tale.txt | sort | uniq -c | sort -n | tail -n 10
       8 our
@@ -90,6 +90,9 @@ sys	0m0.012s
 Summary
 -------
 Pipeline    0.015 s
-AWK         3.915 s
+AWK         3.942 s
 Sed         0.008 s
 
+
+Serching the dictionary for each word is taking most of the time for the AWK solution. Need
+to look for a faster trick.
