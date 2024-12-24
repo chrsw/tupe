@@ -13,3 +13,12 @@ awk '   {
 }
 END     { for (word in num) print word, num[word] }
 ' $*
+
+
+# 'grep' command breakdown:
+# -w search using word boundaries (find exact word matches).
+#    dictionary file is one word on each line
+# -i case insensitive. don't care if the word is capitalized or not.
+# -q quiet search. only return true/false if a word is not found or found.
+#    this is a little counter-intuitive. grep -q returns 0 if a word is found
+#    and 1 if a word is not found.
