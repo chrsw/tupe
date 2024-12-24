@@ -14,4 +14,6 @@ One possible way to get rid of non-words like .CW from the wordfreq
 output is to only add to the word count hash if the word matches
 a word found in an online dictionary like /usr/share/dict/words,
 which exists on the test system but may not on your system.
+The 2nd part of the exercise is to make the wordfreq AWK script case
+insensitive. This can be done with the tolower() AWK built-in function.
 See ex4-9_wordfreq.awk.
