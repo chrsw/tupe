@@ -18,3 +18,78 @@ The 2nd part of the exercise is to make the wordfreq AWK script case
 insensitive. This can be done with the a 'tr' call in the command
 pipeline.
 See ex4-9_wordfreq.awk.
+Performance. The text states " Compare the implementation
+and performance of `wordfreq` to the pipeline from Section 4.2 and to
+this one:
+
+    sed `s/[ \t][ \t]*/\
+    /g` $* | sort | uniq -c | sort -nr
+
+Section 4.2's word counting pipeline:
+
+cat $* |
+tr -sc A-Za-z '\012' |
+sort |
+uniq -c |
+sort -n |
+tail |
+5
+
+The last command, '5' is just for formatting the output.
+Benchmarks:
+
+$ time cat ../extra/the_knights_tale.txt | tr -sc A-Za-z '\012' | sort | uniq -c | sort -n | tail -n 10
+      8 his
+      8 our
+     10 a
+     10 I
+     12 to
+     14 in
+     16 of
+     17 and
+     20 And
+     22 the
+
+real	0m0.015s
+user	0m0.015s
+sys	0m0.010s
+
+$ time cat ../extra/the_knights_tale.txt | tr '[:upper:]' '[:lower:]' | ./ex4-9_wordfreq.awk | sort +1 -nr | sed 10q
+and 35
+the 26
+of 17
+in 17
+that 13
+to 12
+a 11
+on 9
+i 9
+have 9
+
+real	0m3.915s
+user	0m3.062s
+sys	0m0.827s
+
+$ time sed 's/[ \t][ \t]*/\n/g' ../extra/the_knights_tale.txt | sort | uniq -c | sort -n | tail -n 10
+      8 our
+      9 I
+     10 a
+     12 to
+     14 in
+     15 and
+     16 of
+     20 And
+     22 the
+    102 
+
+real	0m0.008s
+user	0m0.008s
+sys	0m0.012s
+
+
+Summary
+-------
+Pipeline    0.015 s
+AWK         3.915 s
+Sed         0.008 s
+
