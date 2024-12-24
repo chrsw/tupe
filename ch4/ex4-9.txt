@@ -38,7 +38,7 @@ tail |
 The last command, '5' is just for formatting the output.
 Benchmarks:
 
-$ time cat ../extra/the_knights_tale.txt | tr -sc A-Za-z '\012' | sort | uniq -c | sort -n | tail -n 10
+$ time cat ../extras/the_knights_tale.txt | tr -sc A-Za-z '\012' | sort | uniq -c | sort -n | tail -n 10
       8 his
       8 our
      10 a
@@ -54,7 +54,7 @@ real	0m0.015s
 user	0m0.015s
 sys	0m0.010s
 
-$ time cat ../extra/the_knights_tale.txt | ./ex4-9_wordfreq.awk | sort +1 -nr | sed 10q
+$ time cat ../extras/the_knights_tale.txt | ./ex4-9_wordfreq.awk | sort +1 -nr | sed 10q
 the 22
 And 20
 of 16
@@ -70,7 +70,7 @@ real	0m3.942s
 user	0m3.168s
 sys	0m0.756s
 
-$ time sed 's/[ \t][ \t]*/\n/g' ../extra/the_knights_tale.txt | sort | uniq -c | sort -n | tail -n 10
+$ time sed 's/[ \t][ \t]*/\n/g' ../extras/the_knights_tale.txt | sort | uniq -c | sort -n | tail -n 10
       8 our
       9 I
      10 a
