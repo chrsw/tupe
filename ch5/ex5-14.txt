@@ -1,0 +1,8 @@
+Exercise 5-14.  The version of `nohup` above combines the standard error
+of the command with the standard output. Is this a good design? If not, how
+would you separate them cleanly?
+
+
+Solution
+It's probably not the best to design to combine both standard error and
+standard output. The user is normally interested in only one or the other.
