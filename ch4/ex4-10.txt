@@ -1,2 +1,13 @@
-Exercise 4-10.  Modify `fold` so that it will fold lines at blanks or tabs rather than
-splitting a word. Make it robust for long words.
+Exercise 4-10.  Modify `fold` so that it will fold lines at blanks or tabs
+rather than splitting a word. Make it robust for long words.
+
+
+Solution 4-10
+The `fold` AWK script from section 4.4 reads a line, if the line is less
+than 80 columns, it is printed. If it is greater than 80 columns it is
+printed 80 columns at a time with no regard for word boundaries.
+Thoughts
+One strategy could be to go to the 80th character and read backwards until
+the first blank. Then print everything between the start of the line and the
+current cursor position. Then start again at the current cursor position.
+Perhaps the AWK built-in function split() could be part of the solution here.
