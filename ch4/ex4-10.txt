@@ -1,0 +1,2 @@
+Exercise 4-10.  Modify `fold` so that it will fold lines at blanks or tabs rather than
+splitting a word. Make it robust for long words.
