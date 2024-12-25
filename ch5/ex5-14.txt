@@ -6,3 +6,9 @@ would you separate them cleanly?
 Solution
 It's probably not the best to design to combine both standard error and
 standard output. The user is normally interested in only one or the other.
+
+On the test system, `nohup` is already a command:
+$ file /usr/bin/nohup
+/usr/bin/nohup: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=f9a6d76dd4a833cad9de92cfbb95ed58cefe9194, for GNU/Linux 3.2.0, stripped
+
+
