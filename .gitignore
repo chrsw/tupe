@@ -1,0 +1,8 @@
+# Object files
+*.o
+
+# Vim working files
+*.swp
+
+# Vim spelling files
+*.spl
