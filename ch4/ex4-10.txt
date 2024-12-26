@@ -11,3 +11,6 @@ One strategy could be to go to the 80th character and read backwards until
 the first blank. Then print everything between the start of the line and the
 current cursor position. Then start again at the current cursor position.
 Perhaps the AWK built-in function split() could be part of the solution here.
+The sed command in the beginning of fold already includes spaces to tabs
+substitution, so that doesn't need to be a consideration for the folding
+on word boundary, any space is a word boundary.
