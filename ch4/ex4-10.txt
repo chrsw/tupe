@@ -14,3 +14,15 @@ Perhaps the AWK built-in function split() could be part of the solution here.
 The sed command in the beginning of fold already includes spaces to tabs
 substitution, so that doesn't need to be a consideration for the folding
 on word boundary, any space is a word boundary.
+Example run using fold from text:
+$ cat long_lines_test.txt | ./fold 
+this is a text file containing very long lines that go past eighty characters pe\
+                                                                         r line.
+the point of this file is to test the functionality of programs, utilities, scri\
+         pts, etc. that are specifically designed to process long lines of text.
+for example, the AWK program 'fold' from Section 4.4 and the exercises based on \
+                                                                    fold's code.
+here's a short line just for test coverage.
+finally, here is another long line after the first short line to test how the co\
+                                                   de handles this scenario too.
+
