@@ -26,3 +26,9 @@ here's a short line just for test coverage.
 finally, here is another long line after the first short line to test how the co\
                                                    de handles this scenario too.
 
+Another strategy could be to split all the words in a line into tokens with the
+split() built-in function then print each token as long as it fits in the 80
+character limit, if it doesn't fit, then insert a new line and start a new
+line. Keep track of how many characters into the line we are with the length()
+built-in function. But then what happens to consecutive spaces with this
+approach?
