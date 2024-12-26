@@ -1,0 +1,5 @@
+this is a text file containing very long lines that go past eighty characters per line.
+the point of this file is to test the functionality of programs, utilities, scripts, etc. that are specifically designed to process long lines of text.
+for example, the AWK program 'fold' from Section 4.4 and the exercises based on fold's code.
+here's a short line just for test coverage.
+finally, here is another long line after the first short line to test how the code handles this scenario too.
