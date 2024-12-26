@@ -1,3 +1,4 @@
+#!/bin/sh
 # fold:  fold long lines
 sed 's/\t/        /g' $* |  # convert tabs to 8 spaces
 awk '
@@ -6,7 +7,7 @@ BEGIN {
     for (i = 1; i <= N; i++)     # make a string of blanks
         blanks = blanks " "
 }
-{   if ((n = length($0) <= N)
+{   if ((n = length($0) <= N))
         print
     else {
         for (i = 1; n > N; n -= N) {
