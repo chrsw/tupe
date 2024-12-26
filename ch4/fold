@@ -3,11 +3,11 @@
 sed 's/\t/        /g' $* |  # convert tabs to 8 spaces
 awk '
 BEGIN {
-    N = 80       # folds at column 80
+    N = 80      # folds at column 80
     for (i = 1; i <= N; i++)     # make a string of blanks
         blanks = blanks " "
 }
-{   if ((n = length($0) <= N))
+{   if ((n = length($0)) <= N)
         print
     else {
         for (i = 1; n > N; n -= N) {
