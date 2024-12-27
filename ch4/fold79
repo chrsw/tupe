@@ -1,6 +1,8 @@
 #!/bin/sh
-# ex4-10_fold:  fold long lines -- 79 column version
+# fold79:       fold long lines -- 79 column version
 #               fold lines but don't break up words
+# Run:
+#   $ ./fold79 long_line_test.txt
 sed 's/\t/        /g' $* |          # convert tabs to 8 spaces
 awk '                               # before sending input to AWK
 BEGIN {
