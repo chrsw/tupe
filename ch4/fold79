@@ -1,17 +1,18 @@
 #!/bin/sh
-# fold:  fold long lines -- 79 column version
-sed 's/\t/        /g' $* |  # convert tabs to 8 spaces
-awk '
+# ex4-10_fold:  fold long lines -- 79 column version
+#               fold lines but don't break up words
+sed 's/\t/        /g' $* |          # convert tabs to 8 spaces
+awk '                               # before sending input to AWK
 BEGIN {
-    N = 79      # folds at column 79
-    for (i = 1; i <= N; i++)     # make a string of blanks
+    N = 79                          # folds at column 79
+    for (i = 1; i <= N; i++)        # make a string of blanks
         blanks = blanks " "
 }
-{   if ((n = length($0)) <= N)
+{   if ((n = length($0)) <= N)      # if the line fits just print it
         print
     else {
-        for (i = 1; n > N; n -= N) {
-            printf "%s\\\n", substr($0,i,N)
+        for (i = 1; n > N; n -= N) {        # print in 80 column chunks
+            printf "%s\\\n", substr($0,i,N) # until the end of line
             i += N;
         }
         printf "%s%s\n", substr(blanks,1,N-n), substr($0,i)
