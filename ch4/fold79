@@ -1,5 +1,5 @@
 #!/bin/sh
-# fold:  fold long lines
+# fold:  fold long lines -- 79 column version
 sed 's/\t/        /g' $* |  # convert tabs to 8 spaces
 awk '
 BEGIN {
