@@ -10,11 +10,14 @@ BEGIN {
 }
 {   if ((n = length($0)) <= N)      # if the line fits just print it
         print
-    else {
-        for (i = 1; n > N; n -= N) {        # print in 80 column chunks
+    else {                                  # the line is longer than N
+        for (i = 1; n > N; n -= N) {        # print in N column chunks
             printf "%s\\\n", substr($0,i,N) # until the end of line
-            i += N;
+            i += N;                         # add backslash before end of line
         }
+        # right justify
+        # for lines that did not fit, first print blanks then the
+        # last chunk
         printf "%s%s\n", substr(blanks,1,N-n), substr($0,i)
     }
 } '
