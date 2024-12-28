@@ -28,12 +28,8 @@ BEGIN {
                 printf "%s ", a[k]
             printf "%s", a[k]
             printf "\\\n"
-            #printf "%s\\\n", substr($0,i,N) # until the end of line
-            #i += N;                         # add backslash before end of line
             i += len;
-            #printf "\nline (before) = %s", line
             line = substr(line,len)
-            #printf "\nline (after) = %s", line
         }
         # only print enough blanks to fill the remaining space
         printf "%s%s\n", substr(blanks,1,N-length(line)), substr($0,i)
