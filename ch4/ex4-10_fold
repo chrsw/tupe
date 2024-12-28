@@ -35,7 +35,7 @@ BEGIN {
             line = substr(line,len)
             #printf "\nline (after) = %s", line
         }
-        printf "%s%s\n", substr(blanks,1,N-n-last), substr($0,i)
-        #printf "%s%s\n", substr(blanks,1,N-n-3), line
+        # only print enough blanks to fill the remaining space
+        printf "%s%s\n", substr(blanks,1,N-length(line)), substr($0,i)
     }
 } '
