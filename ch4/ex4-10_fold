@@ -1,6 +1,7 @@
 #!/bin/sh
 # ex4-10_fold:  fold long lines -- Solution 4-10 version
 # TODO: handle mutliple spaces between words
+# TODO: handle words longer than a line
 sed 's/\t/        /g' $* |          # convert tabs to 8 spaces
 awk '                               # before sending input to AWK
 BEGIN {
