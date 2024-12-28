@@ -30,6 +30,7 @@ BEGIN {
                 printf "%s ", a[k]
             printf "%s", a[k]
             printf "\\\n"
+            # update variables to read more of the same line
             i += len;
             line = substr(line,len)
         }
