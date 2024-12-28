@@ -1,0 +1,41 @@
+#!/bin/sh
+# ex4-10_fold:  fold long lines -- Solution 4-10 version
+#               fold lines but don't break up words
+sed 's/\t/        /g' $* |          # convert tabs to 8 spaces
+awk '                               # before sending input to AWK
+BEGIN {
+    N = 79                          # folds at column 79
+    for (i = 1; i <= N; i++)        # make a string of blanks
+        blanks = blanks " "
+}
+{   if ((n = length($0)) <= N)      # if the line fits just print it
+        print
+    else {                                  # the line is longer than N
+        line = $0
+        for (i = 1; n > N; n -= N) {        # print in N column chunks
+            wc = split(line, a, " ")
+            # find how many words on this line can fit in N columns
+            j = 1; len = 1;
+            while (len <= N) {
+                len += length(a[j])+1;
+                j++;
+            }
+            # went 1 word too far
+            j--;
+            len -= length(a[j])+2;
+            last = length(a[j]);
+            # print all the words that fit in N
+            for (k = 1; k < j; k++)
+                printf "%s ", a[k]
+            printf "\n"
+            #printf "%s\\\n", substr($0,i,N) # until the end of line
+            #i += N;                         # add backslash before end of line
+            i += len;
+            #printf "\nline (before) = %s", line
+            line = substr(line,len)
+            #printf "\nline (after) = %s", line
+        }
+        printf "%s%s\n", substr(blanks,1,N-n-last), substr($0,i)
+        #printf "%s%s\n", substr(blanks,1,N-n-3), line
+    }
+} '
