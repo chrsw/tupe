@@ -27,7 +27,7 @@ BEGIN {
             for (k = 1; k < j-1; k++)
                 printf "%s ", a[k]
             printf "%s", a[k]
-            printf "\n"
+            printf "\\\n"
             #printf "%s\\\n", substr($0,i,N) # until the end of line
             #i += N;                         # add backslash before end of line
             i += len;
