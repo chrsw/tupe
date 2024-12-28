@@ -13,7 +13,7 @@ The following table is a list of exercises and solutions.
 |4-7     |copy-1.awk, copy-2.awk        |        |
 |4-8     |prpages2, prpages3        |        |
 |4-9     |wordfreq, ex4-9_wordfreq.awk, ex4-9.txt        |        |
-|4-10    |        |        |
+|4-10    |ex4-10.txt, ex4-10_fold        |        |
 |4-11	 |        |        |
 |4-12  	 |        |        |
 |4-13    |        |        |
