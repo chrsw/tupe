@@ -1,4 +1,4 @@
-## Solutions for _The UNIX Programming Environment_ (K&R2) Kernighan & Pike, 1984, Prentice Hall, Chapter 4
+## Solutions for _The UNIX Programming Environment_ (K&R2) Kernighan & Pike, 1984, Prentice Hall, Chapter 4: Filters
 
 The following table is a list of exercises and solutions.
 

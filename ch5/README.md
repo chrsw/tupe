@@ -1,4 +1,4 @@
-## Solutions for Chapter 5
+## Solutions for Chapter 5: Shell Programming
 
 The following table is a list of exercises and solutions.
 

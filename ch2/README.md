@@ -1,4 +1,4 @@
-## Solutions for _The UNIX Programming Environment_ Kernighan & Pike, 1984, Prentice Hall, Chapter 2
+## Solutions for _The UNIX Programming Environment_ Kernighan & Pike, 1984, Prentice Hall, Chapter 2: The File System
 
 The following table is a list of exercises and solutions.
 

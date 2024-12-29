@@ -1,4 +1,4 @@
-# Template README for this project
+# Chapter 7: UNIX System Calls
 
 Solutions for _The UNIX Programming Environment_ (K&R2) Kernighan & Pike, 1984, Prentice Hall, Chapter 7.
 

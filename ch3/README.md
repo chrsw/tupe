@@ -1,4 +1,4 @@
-## Solutions for Chapter 3
+## Solutions for Chapter 3: Using the Shell
 
 The following table is a list of exercises and solutions.
 

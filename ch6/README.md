@@ -1,4 +1,4 @@
-## Solutions for Chapter 6
+## Solutions for Chapter 6: Programming with Standard I/O
 
 The following table is a list of exercises and solutions.
 
