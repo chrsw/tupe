@@ -15,4 +15,10 @@ The following table is a list of exercises and solutions.
 |6-9     |                                   |        |
 |6-10    |ex6-10.txt                         |        |
 |6-11    |                                   |        |
+|6-12    |                                   |        |
+|6-13    |                                   |        |
+|6-14    |                                   |        |
+|6-15    |                                   |        |
+|6-16    |                                   |        |
+|6-17    |                                   |        |
 
