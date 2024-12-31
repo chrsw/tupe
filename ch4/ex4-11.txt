@@ -1,0 +1,3 @@
+Exercise 4-11.  Modify `calendar` so it knows about weekends: on Friday,
+"tomorrow" includes Saturday, Sunday and Monday. Modify `calendar` to handle
+leap years. Should `calendar` know about holidays? How would you arrange it?
