@@ -1,0 +1,3 @@
+Exercise 4-12.  Should `calendar` know about dates inside a line, not
+just at the beginning? How about dates expressed in other formats, like
+10/1/83?
