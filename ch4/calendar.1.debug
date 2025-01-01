@@ -1,0 +1,23 @@
+#!/bin/sh
+# calendar.1.debug:  version 1 -- today only
+#                    debug statements to understand the command
+awk <$HOME/calendar '
+        BEGIN { 
+            parts = split("'"`date`"'", date) 
+        }
+        {
+            $1 == date[2] && $2 == date[3]
+        }
+
+        END {
+            printf "parts: %d\n", parts     # number of fields from split()
+            printf "date[1]: %s\n", date[1] # each field in the array  
+            printf "date[2]: %s\n", date[2] # populated by split()
+            printf "date[3]: %s\n", date[3]
+            printf "date[5]: %s\n", date[4]
+            printf "date[4]: %s\n", date[5]
+            printf "date[5]: %s\n", date[6]
+            printf "date[6]: %s\n", date[6]
+            printf "date[7]: %s\n", date[7]
+        }
+' 
