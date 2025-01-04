@@ -3,10 +3,9 @@
 #                    debug statements to understand the command
 awk <$HOME/calendar '
         BEGIN { 
-            parts = split("'"`date "+%a %b %-d %Y %r %Z"`"'", date) 
+            parts = split("'"`date "+%a %b %-d"`"'", date) 
         }
             $1 == date[2] && $2 == date[3]
-            #$1 == date[2] && $2 == date[3]
         END {
             printf "parts: %d\n", parts     # number of fields from split()
             printf "date[1]: %s\n", date[1] # each field in the array  
