@@ -5,7 +5,7 @@ BEGIN {
     x = "Jan 31 Feb 28 Mar 31 Apr 30 May 31 Jun 30 " \
         "Jul 31 Aug 31 Sep 30 Oct 31 Nov 30 Dec 31 Jan 31"
     split(x, data)
-    for (i = 0; i < 24; i+=2) {
+    for (i = 1; i < 24; i+=2) {
         days[data[i]] = data[i+1]
         nextmon[data[i]] = data[i+2]
     }
