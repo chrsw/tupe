@@ -1,6 +1,6 @@
 # calendar.1:       version 1 -- today only
 #                   print today's events using a ~/calendar file
 awk <$HOME/calendar '
-        BEGIN { split("'"`date "+%a %b %-d %Y %r %Z"`"'", date) } 
+        BEGIN { split("'"`date "+%a %b %-d"`"'", date) } 
                 $1 == date[2] && $2 == date[3]
 '  # | mail $NAME - no terminal mail client on this system
