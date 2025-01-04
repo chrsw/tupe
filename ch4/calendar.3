@@ -9,7 +9,7 @@ BEGIN {
         days[data[i]] = data[i+1]
         nextmon[data[i]] = data[i+2]
     }
-    split("'"`date "+%a %b %-d %Y %r %Z"`"'", date) } 
+    split("'"`date "+%a %b %-d"`"'", date) } 
     mon1 = date[2]; day1 = date[3]
     mon2 = mon1; day2 = day1 + 1
     if (day1 >= days[mon1]) {
