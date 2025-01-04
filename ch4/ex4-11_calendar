@@ -1,0 +1,46 @@
+# calendar.3:       version 3 -- today and tomorrow
+#
+awk <$HOME/calendar '
+BEGIN {
+    x = "Jan 31 Feb 28 Mar 31 Apr 30 May 31 Jun 30 " \
+        "Jul 31 Aug 31 Sep 30 Oct 31 Nov 30 Dec 31 Jan 31"
+    split(x, data)
+    for (i = 1; i < 24; i += 2) {
+        days[data[i]] = data[i+1]
+        nextmon[data[i]] = data[i+2]
+    }
+    #split("'"Sat Jan 4"'", date)       # for testing
+    split("'"Fri Jan 3"'", date)        #
+    #split("'"`date "+%a %b %-d"`"'", date)
+    mon1 = date[2]; day1 = date[3]
+    mon2 = mon1; day2 = day1 + 1
+    if (day1 >= days[mon1]) {
+        day2 = 1
+        mon2 = nextmon[mon1]
+    }
+    day3 = 32
+    day4 = 32
+    if (date[1] == "Fri") {
+        # Do something here so that the matching line below includes
+        # the next 3 days (Sat, Sun, Mon)
+        # instead of just having mon1, day1 and mon2, day2; we need
+        # mon1, mon2 and day1, day2, day3 and day4 (Fri, Sat, Sun, Mon)
+        day3 = day2 + 1
+        day4 = day2 + 2
+        if (day3 >= days[mon1]) {
+            day3 = 1
+            day4 = 2
+            mon2 = nextmon[mon1]
+        }
+        if (day4 >= days[mon1]) {
+            day4 = 1
+            mon2 = nextmon[mon1]
+        }
+        #printf "%d\n", day3        # for debug
+        #printf "%d\n", day4
+    }
+}
+    $1 == mon1 && $2 == day1 || $1 == mon2 && $2 == day2 ||
+    $1 == mon1 && $2 == day3 || $1 == mon2 && $2 == day3 ||
+    $1 == mon1 && $2 == day4 || $1 == mon2 && $2 == day4
+'  # | mail $NAME - no terminal mail client on this system
