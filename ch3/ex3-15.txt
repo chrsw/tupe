@@ -1,0 +1,8 @@
+Exercise 3-15.  If the `diff` loop were placed in a shell file, would you
+put the `pick` in the shell file? Why or why not?
+
+
+Solution 3-15
+If the `diff` loop were placed in a shell file then the `pick` command would
+need to be in the same file so they can both reference the same arguments.
+:
