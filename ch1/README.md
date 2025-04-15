@@ -6,7 +6,7 @@ The following table is a list of exercises and solutions.
 |--------|--------|--------|
 |1-1     | ex1-1.txt |        |
 |1-2     | ex1-2.txt |        |
-|1-3     | ex1-3.sh, ex1-3.txt |        |
+|1-3     | <span>ex1-3.sh<span>, ex1-3.txt |        |
 |1-4     | ex1-4.txt |        |
 |1-5     | ex1-5.txt |        |
 |1-6     | ex1-6.txt |        |
