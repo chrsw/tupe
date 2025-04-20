@@ -18,7 +18,7 @@ The following table is a list of exercises and solutions.
 |3-12    |ex3-12.txt                    |        |
 |3-13    |ex3-13.txt                    |        |
 |3-14    |ex3-14.txt, 411, sec3-7_411   |        |
-|3-15    |                              |        |
+|3-15    |ex3-15.txt                    |        |
 |3-16    |                              |        |
 |3-17    |bundle, ex3-17_bundle         |        |
 |3-18    |bundle, ex3-18_bundle         |        |
