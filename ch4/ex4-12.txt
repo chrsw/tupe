@@ -1,3 +1,15 @@
 Exercise 4-12.  Should `calendar` know about dates inside a line, not
 just at the beginning? How about dates expressed in other formats, like
 10/1/83?
+
+
+Solution 4-12.
+No calendar should not know about dates inside a line. Dates inside a
+line are typically just references to other lines. Find these dates
+inside other lines would add unnecessary complexity to the application.
+
+Dates in other formats can be implemented in the calendar app but
+probably should be specified with a command line switch rather than
+the app trying to figure out the date format by itself. This would
+simplify the design off the app. This means mixed date formats would
+not be accepted.
