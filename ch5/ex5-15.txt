@@ -1,0 +1,22 @@
+Exercise 5-15.  Look up the times the shell built-in, and add a line to
+your .profile so that when you log off the shell prints how much CPU time you
+have used.
+
+
+Solution 5-15
+The Bash source has been installed into
+~/proj/bash-src/bash-5.0/builtins
+`times` built-in source installed into
+/home/chris/proj/bash-src/bash-5.0/builtins/times.def
+.def files are meant to be pre-processed by a tool that generates the C
+source file implementing the built-in function.
+The times() built-in function source was generated in
+~/proj/bash-src/bash-5.0/lib/sh/times.c
+On the test system, the `times` built-in is implemented as a C function,
+not as a shell script.
+
+For the solution to this exercise, one possiblity is to take the C source
+from the Bash times built-in and use that code to write a new C program
+that can included for execution in .profile.
+Another option is to write a Bash shell version of this built-in and include
+the Bahe shell code in .profile.
