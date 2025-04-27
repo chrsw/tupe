@@ -4,6 +4,12 @@ have used.
 
 
 Solution 5-15
+Printing out how much CPU time has been used. Add this line to .profile:
+trap times 2>/dev/null EXIT
+But, this will only  work for login shells. For non-login shells, add
+this line to ~/.bashrc (for Bash shells, which is what the test system uses).
+
+Explanation:
 The Bash source has been installed into
 ~/proj/bash-src/bash-5.0/builtins
 `times` built-in source installed into
@@ -15,8 +21,29 @@ The times() built-in function source was generated in
 On the test system, the `times` built-in is implemented as a C function,
 not as a shell script.
 
-For the solution to this exercise, one possiblity is to take the C source
+For the solution to this exercise, one possibility is to take the C source
 from the Bash times built-in and use that code to write a new C program
 that can included for execution in .profile.
 Another option is to write a Bash shell version of this built-in and include
-the Bahe shell code in .profile.
+the Bash shell code in .profile.
+
+Login shells vs non-login shells.
+Most shells on modern systems are non-login shells. For example, all the GUI
+terminals in X and virtual terminal, shell script sub-shells are all non-login
+shells.
+Running Bash with the -l option starts the shell in login mode. This way
+.profile is read.
+
+Made Bash from source with
+$ ./configure
+$ make
+By default *.c builtin source files are removed by the Makefiles
+Edited the Makefiles for the Bash source so that intermediate files are not deleted.
+Ran 'make' again after editing the builtins/Makefile.
+Finally ended up with builtins/times.c source file.
+The times behavior is defined in times_builtin() in builtins/times.c
+The function works like this:
+
+TODO:
+Write the solution as a Bash one-line included in .bashrc or .profile.
+Write the solution as a C program, using the Bash times builtin source.
