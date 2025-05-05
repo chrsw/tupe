@@ -9,17 +9,15 @@ trap times 2>/dev/null EXIT
 But, this will only  work for login shells. For non-login shells, add
 this line to ~/.bashrc (for Bash shells, which is what the test system uses).
 
-Explanation:
+Deeper explanation on how the times builtin is implemented in Bash:
 The Bash source has been installed into
 ~/proj/bash-src/bash-5.0/builtins
 `times` built-in source installed into
 /home/chris/proj/bash-src/bash-5.0/builtins/times.def
 .def files are meant to be pre-processed by a tool that generates the C
 source file implementing the built-in function.
-The times() built-in function source was generated in
+The times() library function source is provided in the file: 
 ~/proj/bash-src/bash-5.0/lib/sh/times.c
-On the test system, the `times` built-in is implemented as a C function,
-not as a shell script.
 
 For the solution to this exercise, one possibility is to take the C source
 from the Bash times built-in and use that code to write a new C program
@@ -34,16 +32,14 @@ shells.
 Running Bash with the -l option starts the shell in login mode. This way
 .profile is read.
 
-Made Bash from source with
+Made Bash from source with:
 $ ./configure
 $ make
 By default *.c builtin source files are removed by the Makefiles
-Edited the Makefiles for the Bash source so that intermediate files are not deleted.
-Ran 'make' again after editing the builtins/Makefile.
+Edited the Makefiles for the Bash source so that intermediate files are not deleted. Ran 'make' again after editing the builtins/Makefile.
+
 Finally ended up with builtins/times.c source file.
 The times behavior is defined in times_builtin() in builtins/times.c
-The function works like this:
+times_builtin() is basically a wrapper around the times() library function
+implemented in lib/sh/times.c.
 
-TODO:
-Write the solution as a Bash one-line included in .bashrc or .profile.
-Write the solution as a C program, using the Bash times builtin source.
