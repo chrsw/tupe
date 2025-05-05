@@ -1,0 +1,63 @@
+--- bash-src-orig/bash-5.0/builtins/Makefile	2025-05-04 20:59:24.000000000 
++++ bash-src/bash-5.0/builtins/Makefile	2025-04-27 18:02:17.000000000 
+@@ -111,25 +111,25 @@
+ RL_LIBSRC = $(topdir)/lib/readline
+ 
+ .SUFFIXES:
+ .SUFFIXES: .def .c .o
+ # How to make a .o file from a .def file.
+ .def.o:
+-	$(RM) $@
++	#$(RM) $@
+ 	./$(MKBUILTINS) $(DIRECTDEFINE) $<
+-	$(CC) -c $(CCFLAGS) $*.c || ( $(RM) $*.c ; exit 1 )
+-	$(RM) $*.c
++	$(CC) -c $(CCFLAGS) $*.c || ( exit 1 )
++	#$(RM) $*.c
+ 
+ # How to make a .c file from a .def file.
+ .def.c:
+-	$(RM) $@
++	#$(RM) $@
+ 	./$(MKBUILTINS) $(DIRECTDEFINE) $<
+ 
+ # default rule for making a .o file from a .c file
+ .c.o:
+-	$(RM) $@
++	#$(RM) $@
+ 	$(CC) -c $(CCFLAGS) $<
+ 
+ DEFSRC =  $(srcdir)/alias.def $(srcdir)/bind.def $(srcdir)/break.def \
+ 	  $(srcdir)/builtin.def $(srcdir)/caller.def \
+ 	  $(srcdir)/cd.def $(srcdir)/colon.def \
+ 	  $(srcdir)/command.def $(srcdir)/declare.def $(srcdir)/echo.def \
+@@ -162,13 +162,13 @@
+ CREATED_OBJECTS = tmpbuiltins.o gen-helpfiles.o mkbuiltins.o
+ 
+ all: $(MKBUILTINS) libbuiltins.a $(HELPFILES_TARGET)
+ targets: libbuiltins.a $(HELPFILES_TARGET)
+ 
+ libbuiltins.a: $(MKBUILTINS) $(OFILES) builtins.o
+-	$(RM) $@
++	#$(RM) $@
+ 	$(AR) $(ARFLAGS) $@ $(OFILES)
+ 	-$(RANLIB) $@
+ 
+ tmpbuiltins.c:	$(MKBUILTINS) $(DEFSRC)
+ 	./$(MKBUILTINS) -externfile tmpbuiltins.h -structfile $@ \
+ 		-noproduction -nofunctions \
+@@ -213,13 +213,13 @@
+ 	fi
+ 
+ install:	
+ 
+ mkbuiltins.o: ../config.h
+ mkbuiltins.o: mkbuiltins.c
+-	$(RM) $@
++	#$(RM) $@
+ 	$(CC_FOR_BUILD) -c $(CCFLAGS_FOR_BUILD) $<
+ 
+ mkbuiltins$(EXEEXT): mkbuiltins.o
+ 	$(CC_FOR_BUILD) $(LDFLAGS_FOR_BUILD) -o $(MKBUILTINS) mkbuiltins.o $(LIBS_FOR_BUILD)
+ 
+ # rules for deficient makes, like SunOS

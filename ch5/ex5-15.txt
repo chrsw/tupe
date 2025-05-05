@@ -36,7 +36,10 @@ Made Bash from source with:
 $ ./configure
 $ make
 By default *.c builtin source files are removed by the Makefiles
-Edited the Makefiles for the Bash source so that intermediate files are not deleted. Ran 'make' again after editing the builtins/Makefile.
+Edited the Makefiles for the Bash source so that intermediate files are not deleted. See ex5-15_bash_builtins_makefile.diff for the changes made to bash-5.0/builtins/Makefile in order to keep intermediate .c files that implement builtin
+source around.
+
+Ran 'make' again after editing the builtins/Makefile.
 
 Finally ended up with builtins/times.c source file.
 The times behavior is defined in times_builtin() in builtins/times.c

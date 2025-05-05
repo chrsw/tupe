@@ -18,7 +18,7 @@ The following table is a list of exercises and solutions.
 |5-12    |ex5-12.txt, ex5-12_watchwho, ex5-12_watchwho.bash  |        |
 |5-13    |ex5-13.txt                         |        |
 |5-14    |ex5-14.txt, nohup, ex5-14_nohup    |        |
-|5-15    |ex5-15.txt                         |        |
+|5-15    |ex5-15.txt, ex5-15_bash_builtins_makefile.diff     |        |
 |5-16    |                                   |        |
 |5-17    |                                   |        |
 |5-18    |                                   |        |
