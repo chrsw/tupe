@@ -21,3 +21,8 @@ The Standard C library may have changed a little since this book was published. 
 $ ldd --version | head -n 1
 ldd (Ubuntu GLIBC 2.31-0ubuntu9.16) 2.31
 ```
+
+Each solution can contain multiple types off files:
+- Source files (C, AWK, Shell, etc)
+- Text files containing a copy of the exercise text and some solution text
+- TBD Markdown files containing formatted versions of text file content
