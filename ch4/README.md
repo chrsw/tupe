@@ -16,7 +16,7 @@ The following table is a list of exercises and solutions you can find in this ch
 |4-10    |ex4-10.txt, ex4-10_fold       |        |
 |4-11	 |                              |        |
 |4-12  	 |                              |        |
-|4-13    |                              |        |
+|4-13    |ex4-13.txt                    |        |
 |4-14    |                              |        |
 |4-15    |                              |        |
 
