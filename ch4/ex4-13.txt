@@ -8,3 +8,6 @@ $ sudo echo $NAME
 chris
 $ sudo ./getname 
 root
+The `at` man page explains a little about this:
+"If at is executed from a su(1) shell, the owner of the login 
+shell will receive the mail."
