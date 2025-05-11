@@ -1,1 +1,10 @@
 Exercise 4-13.  Why doesn't `calendar` use getname instead of $NAME?
+
+
+Solution 4-13
+Using $NAME ensures mail is sent to the user running or scheduling calendar
+reguardless of how it's invoked.
+$ sudo echo $NAME
+chris
+$ sudo ./getname 
+root
