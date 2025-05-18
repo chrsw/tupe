@@ -1,6 +1,6 @@
 Exercise 5-16.
 Write a program that will find the next available user-id in /etc/passwd. If
-you are enthusiastic (and have permission), make it inot a command that will
+you are enthusiastic (and have permission), make it into a command that will
 add a new user to the system. What permissions does it need? How should it
 handle interrupts?
 
