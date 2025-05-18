@@ -1,0 +1,26 @@
+Exercise 5-16.
+Write a program that will find the next available user-id in /etc/passwd. If
+you are enthusiastic (and have permission), make it inot a command that will
+add a new user to the system. What permissions does it need? How should it
+handle interrupts?
+
+
+Solution 5-16
+Starting with the /etc/passwd example from here:
+https://www.ibm.com/docs/en/aix/7.1.0?topic=passwords-using-etcpasswd-file
+Editing this file to simplify the solution.
+Instead of using the test system /etc/passwd.
+Saved to the chapter 5 directory as 'passwd'.
+According to `man 5 passwd`, the /etc/passwd file stores account information
+for each user on one line, with seven fields delimited by colons (":").
+the user-id field ("numerical user ID") is the third field in each row.
+For simplicity, the solution will take a naive approach and use the next
+available ID after the highest current ID in the passwd file. i.e., gaps
+will not be considered.
+
+The solution for this exercise is captured in the file ex5-16_passwd.
+$ ./ex5-16_passwd 
+202
+
+This script finds the first free ID beyond the highest ID In the password
+file.

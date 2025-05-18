@@ -1,0 +1,10 @@
+#!/bin/bash
+
+awk 'BEGIN {FS = ":"
+            maxid = 0}
+        {
+            if ($3 > max)
+                maxid = $3
+        }
+    END {print maxid+1}
+' passwd
