@@ -1,0 +1,21 @@
+Exercise 5-17.  Why doesn't `overwrite` use signal code 0 in the `trap` so
+the files are removed when it exits? Hint: Try typing DEL while running
+the following program:
+
+    trap "echo exiting; exit 1" 0 2
+    sleep 10
+
+
+Solution 5-17
+Trapping on 0 and 2 would be a mistake because the shell would execute
+the command in the trap command argument twice:
+$ cat trap0
+trap "echo exiting; exit 1" 0 2
+sleep 10
+
+$ ./trap0
+^Cexiting
+exiting
+
+Trapping on 0 only would be a mistake since the file removes the files
+when exiting normally anyway.
