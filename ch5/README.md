@@ -20,7 +20,7 @@ The following table is a list of exercises and solutions.
 |5-14    |ex5-14.txt, nohup, ex5-14_nohup    |        |
 |5-15    |ex5-15.txt, ex5-15_bash_builtins_makefile.diff     |        |
 |5-16    |ext5-16.txt, ex5-16_passwd         |        |
-|5-17    |                                   |        |
+|5-17    |ex5-17.txt,trap0                   |        |
 |5-18    |                                   |        |
 |5-19    |                                   |        |
 |5-20    |                                   |        |
