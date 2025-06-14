@@ -1,0 +1,2 @@
+trap "echo exiting; exit 1" 0 2
+sleep 10
