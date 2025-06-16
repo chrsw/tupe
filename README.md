@@ -1,6 +1,6 @@
 ## The UNIX Programming Environment
 
-Code, examples and solutions from "The UNIX Programming Environment" by Kernighan and Pike, 1978, Prentice-Hall.
+Code, examples and solutions from "The UNIX Programming Environment" by Kernighan and Pike, 1978, Prentice-Hall. aka "Kernighan & Pike" and "K&P".
 
 https://www.pearson.com/en-us/subject-catalog/p/unix-programming-environment-the/P200000000349/9780139376818
 
