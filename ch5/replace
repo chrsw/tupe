@@ -10,7 +10,6 @@ vflag=
 if test "$1" = -v
 then
 	vflag="w /dev/tty"
-	echo "echoing: $vflag"
 	shift
 fi
 
