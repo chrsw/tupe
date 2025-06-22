@@ -1,0 +1,20 @@
+Exercise 5-18.  Add option -v to 'replace' to print all changed lines on
+/dev/tty. Strong hint: s/$left/$right/g$vflag.
+
+
+Solution 5-18
+See ex5-18_replace for solution. The `replace` example was modified to look
+for a -v option using the command line argument position facility. The `sed`
+command was modified to add a flag to print matching lines to /dev/tty.
+Tested on Ubunut 20.04.
+
+The `overwrite` script was made executable. The current directory was added
+to the path PATH of the ex5-18_replace script. ex5-18_test.txt is the test
+input/output file.
+
+$ chmod +x overwrite.*
+$ ln -s overwrite.3 overwrite
+$ cat ex5-18_test.txt 
+aaBBBaaBBaBBBBBaaa
+./ex5-18_replace -v B A ex5-18_test.txt 
+aaAAAaaAAaAAAAAaaa
