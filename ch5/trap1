@@ -1,0 +1,4 @@
+tf=/tmp/trap1.$$
+trap "echo exiting; rm $tf; exit 1" 1 2
+touch $tf
+sleep 10
