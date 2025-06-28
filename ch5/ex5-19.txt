@@ -1,0 +1,5 @@
+Exercise 5-19.  Fix `replace` so it works regardless of the characters
+in the substitution strings.
+
+
+Solution 5-19
