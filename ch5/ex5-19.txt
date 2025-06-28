@@ -3,3 +3,8 @@ in the substitution strings.
 
 
 Solution 5-19
+Not sure what the problem here is yet. The exercise text is clear but
+the problems described haven't been encountered yet. Will need to try
+some more substitution strings with uncommon/non-printable characters
+to see what the real issue is. Might also depend on what version of the
+tools are being used.
