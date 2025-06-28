@@ -8,3 +8,7 @@ the problems described haven't been encountered yet. Will need to try
 some more substitution strings with uncommon/non-printable characters
 to see what the real issue is. Might also depend on what version of the
 tools are being used.
+
+Maybe what the authors are looking for is for the `replace` script to look
+at the substitution strings and based on the characters in the
+substitution strings, use a certain `sed` s command delimiter character.
