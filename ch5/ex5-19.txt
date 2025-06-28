@@ -12,3 +12,14 @@ tools are being used.
 Maybe what the authors are looking for is for the `replace` script to look
 at the substitution strings and based on the characters in the
 substitution strings, use a certain `sed` s command delimiter character.
+
+The file ex5-19_replace has the framework for a solution and an example
+instance. This solution script is based on the `replace` example from
+Section 5.5. The strategy for this solution is to look for special
+characters in the substitution strings and pick a character for the `sed`
+command that isn't found in the string. This isn't a general solution
+because it requires every non-alphanumeric character be checked for manually.
+
+Potentially a general solution could be to pick any substitution character,
+escape that character in the input file, apply the substitution then reverse
+the replacement. But this has not been attempted.
