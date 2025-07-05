@@ -14,7 +14,7 @@ The following table is a list of exercises and solutions you can find in this ch
 |4-8     |prpages2, prpages3            |        |
 |4-9     |wordfreq, ex4-9_wordfreq.awk, ex4-9.txt|        |
 |4-10    |ex4-10.txt, ex4-10_fold       |        |
-|4-11	 |                              |        |
+|4-11	 |ex4-11.txt,ex4-11_calendar                              |        |
 |4-12  	 |                              |        |
 |4-13    |ex4-13.txt                    |        |
 |4-14    |                              |        |
