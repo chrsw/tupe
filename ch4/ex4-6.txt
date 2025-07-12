@@ -1,0 +1,31 @@
+Exercise 4-6.  Use 'sed' to make 'bundle' more robust. Hint: in here documents,
+the end-marking word is recognized only when it matches the line exactly.
+
+
+Solution 4-6
+In addition to the hint in the Exercise text, the description of 'bundle' in
+Section 3.9 also talks about the issue with this program: "There's a problem 
+if one of the files you're sending happens to contain a line of the form
+
+    End of _filename_
+
+but it's a low probability event."
+The exercise is asking to turn this "low probability event" to a zero
+probability event using the 'sed' utility. The crux of the issue appears
+to be using 'sed' to avoid the problem of "End of _filename_" appearing
+in one of the scripts that is being bundled.
+The text describes the input to bundle as "one of the files you're sending"
+because the motivation for writing 'bundle' is that you're a user who wants
+to send shell scripts to another user via 'mail', but you want to send all
+plain text shell scripts as one big self-extracting file.
+
+If an input file contains a line like "End of _filename_" and nothing
+else on the line then the 'bundle' script will break. The 'bundle' script
+will generate a new script (the text example is called 'junk') and the new
+self-extracting script will stop outputting the offending file prematurely.
+
+Idea: if the input file does contain "End of _filename_" by itself on an
+otherwise empty line then maybe 'sed' can turn "End of _filename_" to
+"End of _filename_ " with an added space at the end. An inverse operation
+will have to be performed when the self-extracting script is executed to
+restore the original file contents.
