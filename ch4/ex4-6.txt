@@ -29,3 +29,25 @@ otherwise empty line then maybe 'sed' can turn "End of _filename_" to
 "End of _filename_ " with an added space at the end. An inverse operation
 will have to be performed when the self-extracting script is executed to
 restore the original file contents.
+
+For this idea to work certain lines in bundle will need to be modified.
+
+    echo "cat >$i <<'End of $i'"
+
+This will need a new 'sed' command instead of 'cat' in the command line
+so that the original file will be modified so that "End of _filename_"
+does not appear by itself on a single line. Maybe something like this
+
+    echo "sed 's/End of $i/End of $i /g' >$i <<'End of $i'"
+
+Then when the contents of the file are packed into the bundle, the line
+
+    cat $i
+
+Needs to be changed to a 'sed' command so that the original file is restored
+
+    sed 's/End of $i /End of $i'/g' $i
+
+So now when bundle packs the files into the self-extracting shell program,
+they are first modified so that the end-marking for the "here" document is
+unique. Then this change is undone by the output script.
