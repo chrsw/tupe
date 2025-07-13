@@ -9,7 +9,7 @@ The following table is a list of exercises and solutions you can find in this ch
 |4-3     |ex4-3.txt, check              |        |
 |4-4     |ex4-4.txt, wcp, top10.c       |        |
 |4-5     |ex4-5_newer, ex4-5_older      |        |
-|4-6     |                              |        |
+|4-6     |ex4-6.txt, ex4-6_bundle                              |        |
 |4-7     |copy-1.awk, copy-2.awk        |        |
 |4-8     |prpages2, prpages3            |        |
 |4-9     |wordfreq, ex4-9_wordfreq.awk, ex4-9.txt|        |
