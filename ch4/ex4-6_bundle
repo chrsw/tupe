@@ -1,0 +1,14 @@
+# ex4-6_bundle:  group files into distribution package, make robust
+#                against the key "here" pattern
+
+echo '# To unbundle, sh this file'
+for i
+do
+	echo "echo $i 1>&2"
+	#echo "cat >$i <<'End of $i'"
+	echo "sed 's/^End of $i $/End of $i/' >$i <<'End of $i'"
+	#cat $i
+	sed 's/^End of '$i'$/End of '$i' /' $i
+	echo "End of $i"
+done
+
