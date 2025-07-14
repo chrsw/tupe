@@ -57,7 +57,10 @@ See ex4-6_bundle for the solution.
 
 Example run:
 
-    $ ./ex4-6_bundle cx ex4-5_test lc >ex4-6.bundle
+    $ ./ex4-6_bundle cx ex4-6_test lc >ex4-6.bundle
     $ mkdir test && cd test && cp ../ex4-6.bundle .
     $ sh ex4-6.bundle
-    $ cat test
+    $ cat ex4-6_test
+
+The original file is bundled and extracted correctly even though it contains
+"End of ex4-6_test" by itself on a line.
