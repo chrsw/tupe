@@ -1,0 +1,2 @@
+Exercise 5-20.  Can `replace` be used to change the variable 'i' to 'index'
+everywhere in a program? How could you change things to make this work?
