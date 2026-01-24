@@ -23,7 +23,7 @@ The following table is a list of exercises and solutions.
 |5-17    |ex5-17.txt,trap0                   |        |
 |5-18    |ex5-18.txt, ex5-18_replace, ex5-18_test.txt                                   |        |
 |5-19    |ex5-19.txt, ex5-19_replace, ex5-19_test.txt                                   |        |
-|5-20    |                                   |        |
+|5-20    |ex5-20.txt, ex5-20_replace, ex5-20_orig.txt                                   |        |
 |5-21    |                                   |        |
 |5-22    |                                   |        |
 |5-23    |                                   |        |

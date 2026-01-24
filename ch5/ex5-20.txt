@@ -1,2 +1,24 @@
 Exercise 5-20.  Can `replace` be used to change the variable 'i' to 'index'
 everywhere in a program? How could you change things to make this work?
+
+Solution 5-19
+Unlikely `replace` can be used for this purpose as-is. The ask to only replace
+the letter 'i' as a whole word and not any random i found in the middle of a
+word or comment.
+
+Testing this shows it doesn't work:
+$ cat ex5-20_orig.txt 
+this is a test to see if all instances of i can be replaced with index by the replace program
+$ ./replace i index ex5-20_test.txt
+$ cat ex5-20_test.txt 
+thindexs indexs a test to see indexf all indexnstances of index can be replaced windexth indexndex by the replace program
+
+The about shell session history shows that `replace`, as-is before Exercise 5-20 can't perform this task.
+
+Updated the `replace` program to `ex5-20_replace` and modified the 'sed' script to look for whole words for the first replacement argument.
+
+$ cp ex5-20_orig.txt ex5-20_test.txt
+$ ./ex5-20_replace i index ex5-20_test.txt
+$ cat ex5-20_test.txt 
+this is a test to see if all instances of index can be replaced with index by the replace program
+
