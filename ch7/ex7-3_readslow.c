@@ -1,4 +1,6 @@
 /*
+ * ex7-3_readslow.c
+ *
  * Description:
  *      Modify `readslow` to handle a filename argument if one is present.
  *      Add the option -e:
@@ -24,6 +26,9 @@ int main(int argc, char *argv[])
     int n;
     int fd = 0;
 
+    /* open a file from the program arguments and read from 
+     * the file instead of standard input
+     */
     if (argc == 2) {
         fd = open(argv[1], 0);
     }
