@@ -1,0 +1,16 @@
+Exercise 5-21  Is `replace` convenient and powerful enough to belong
+in /usr/bin? Is it preferable to simply typing the correct `sed`
+commands when needed? Why or why not?
+
+
+Solution 5-21
+Replace is powerful but it is not universal, it depends on static
+delimiters which some input files could break. So the recommendation
+would be not not have this command in /usr/bin and for users to type
+the correct `sed` command when needed. Maybe a better idea is to not
+put this `replace` command in a folder with other executables but
+in a directory with other idiomatic templates.
+Looking at the Ubuntu 20.04 host:
+chris@xps:~$ which replace
+chris@xps:~$ 
+
