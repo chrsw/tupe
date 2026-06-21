@@ -1,9 +1,9 @@
-# zap pattern:  kill all processes matching pattern
+# zap pat:  kill all processes matching pat
 # final version
 
 PATH=/bin:/usr/bin
 ifs='
-'               # just a newline
+'                    # just a newline
 
 case $1 in
 "")  echo 'Usage: zap [2] pattern' 1>$2; exit 1 ;;
@@ -11,4 +11,4 @@ case $1 in
 esac
 
 echo '      PID TTY     TIME    CMD'
-kill `pick \`ps -ag | grep "$+"\' | awk '{print $1}'
+kill $SIG `pick \`ps -ag | egrep "$*"\' | awk '{print $1}'`
