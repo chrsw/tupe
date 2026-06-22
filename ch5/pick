@@ -4,7 +4,7 @@ PATH=/bin:/usr/bin
 
 for i       # for each argument
 do
-    echo -n "$i?" >/dev/tty
+    echo -n "$i? " >/dev/tty
     read response
     case $response in
     y*)     echo $i ;;
