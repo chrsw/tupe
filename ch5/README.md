@@ -1,6 +1,10 @@
 ## Solutions for Chapter 5: Shell Programming
 
 The following table is a list of exercises and solutions.
+The test machine, Ubuntu 20.04 has no `pick` command by default.
+The `pick` too one gets with `sudo apt install pick` is a curses
+application and has different behavior than what is described
+in the book.
 
 |Exercise|Solution                           |Comments|
 |--------|-----------------------------------|--------|
@@ -21,10 +25,10 @@ The following table is a list of exercises and solutions.
 |5-15    |ex5-15.txt, ex5-15_bash_builtins_makefile.diff     |        |
 |5-16    |ext5-16.txt, ex5-16_passwd         |        |
 |5-17    |ex5-17.txt,trap0                   |        |
-|5-18    |ex5-18.txt, ex5-18_replace, ex5-18_test.txt                                   |        |
-|5-19    |ex5-19.txt, ex5-19_replace, ex5-19_test.txt                                   |        |
+|5-18    |ex5-18.txt, ex5-18_replace, ex5-18_test.txt  |        |
+|5-19    |ex5-19.txt, ex5-19_replace, ex5-19_test.txt  |        |
 |5-20    |ex5-20.txt, ex5-20_replace, ex5-20_orig.txt                                   |        |
-|5-21    |                                   |        |
+|5-21    | ex5-21.txt                        |        |
 |5-22    |                                   |        |
 |5-23    |                                   |        |
 |5-24    |                                   |        |
