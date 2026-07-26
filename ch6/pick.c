@@ -10,7 +10,6 @@ static void pick(char *);
 char ttyin();
 FILE * efopen(char, int);
 
-
 char *progname;         /* program name for error messages */
 
 int main(int argc, char *argv[])

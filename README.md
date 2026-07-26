@@ -16,7 +16,7 @@ export PATH=$PATH:~/proj/tupe2/bin
 
 Shell scripts tested with example code or at least tested with `sh -n <script>`
 
-The Standard C library may have changed a little since this book was published. One of the test systems, Ubunut 20.04, used the following library:
+The Standard C library may have changed a little since this book was published. One of the test systems, Ubuntu 20.04, used the following library:
 ```
 $ ldd --version | head -n 1
 ldd (Ubuntu GLIBC 2.31-0ubuntu9.16) 2.31
@@ -26,3 +26,6 @@ Each solution can contain multiple types of files:
 - Source files (C, AWK, Shell, etc)
 - Text files containing a copy of the exercise text and some solution text
 - Markdown files containing formatted versions of text file content (TBD)
+
+Tips
+To substitute a command name with the output of command in a command line or script use this single quote character: `. To quote a string with single quotes, use this single quote character: '.
